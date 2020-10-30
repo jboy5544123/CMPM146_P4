@@ -57,8 +57,46 @@ def spread_to_weakest_neutral_planet(state):
 
     #taking a neutral planet that is reasonably close to us in order of least cost while maintaining out original fleet count
     #to a reasonable degree
+def spread(state):
+    #(1) assign weights to distance to planet, cost, and growth weight
+    distance_weight = 1
+    cost_weight = 1
+    growth_weight = 1
 
-    #
+
+    #(2) find the neutral planet that is most efficient to claim
+    value = 1000000
+
+    planet_to_take = (state.neutral_planets())[0]
+
+    for planet in state.neutral_planets():
+        planet_value = planet.num_ships*cost_weight + planet.growth_rate*growth_weight + state.distance(state.my_planets[0], planet)*distance_weight
+
+        if(planet_vlaue <= value):
+            value = planet_value
+            planet_to_take = planet
+
+    #(3) check the enemy fleet size to see if you can claim safely
+    enemy_ships_available = 0
+    my_ships_available = 0
+    my_strongest_planet = state.my_planets()[0]
+    enemy_strongest_planet = state.enemy_planets()[0]
+    for planets in state.my_planets():
+        my_ships_available += planets.num_ships
+        if(my_strongest_planet.num_ships <= planet.num_ships):
+            my_strongest_planet = planet
+
+    for planets in state.enemy_planets():
+        enemy_ships_available += planets.num_ships
+        if(enemy_strongest_planet.num_ships <= planet.num_ships):
+            enemy_strongest_planet = planet
+
+
+    if(my_strongest_planet.num_ships>=(enemy_ships_available/(len(state.enemy_planets())+1)) and my_strongest_planet.num_ships + (state.distance(my_strongest_planet,enemy_strongest_planet)*my_strongest_planet.growth_rate) >= enemy_strongest_planet.num_ships*1.00):
+        issue_order(state, my_strongest_planet.ID, planet_to_take.ID, floor(((my_strongest_planet.num_ships) + (state.distance(my_strongest_planet,enemy_strongest_planet)*my_strongest_planet.growth_rate)) - (enemy_strongest_planet.num_ships-1)))
+
+
+
 
 
 #Defending Strategy:
