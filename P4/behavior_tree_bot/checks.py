@@ -82,7 +82,7 @@ def check_planet_size(state):
     # checking our fleets and if they're going to opposing planets first
     for my_fleets in state.my_fleets():
         
-        # if(my_fleets.destination_planet.owner == 2) ?
+        # if(my_fleets.destination_planet.owner == 2)
         if(my_fleets.destination_planet in state.enemy_planets()): # if owned by enemy
             fleet_dest.append(my_fleets.destination_planet)
      
@@ -109,8 +109,9 @@ def check_planet_size(state):
 # closest_planet = (our planet ID, enemy planet ID)
 def check_enemy_forces(state):
     
+    close_by = False
     closest_planet_dist = math.inf
-    closest_planet = None
+    our_closest_planet = None
     enemy_src_planet = None
     
     for enemy_fleet in state.enemy_fleets():
@@ -126,11 +127,12 @@ def check_enemy_forces(state):
                 
                 if(dist < closest_planet_dist):
                     
+                    close_by = True
                     our_closest_planet = my_planet.ID
                     enemy_src_planet = enemy_src
                     closest_planet_dist = dist
                 
-    return (our_closest_planet, enemy_src_planet)        
+    return (close_by, our_closest_planet, enemy_src_planet)        
             
             
 
