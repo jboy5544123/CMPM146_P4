@@ -36,8 +36,9 @@ def check_surrounding_planets(state):
                 B = True
                 closest_neutral = enemy_dest
                 closest_neutral_dist = dist1
-                
-    return (B, closest_neutral, closest_neutral_dist)
+     
+    return B
+    #return (B, closest_neutral, closest_neutral_dist)
             
   
 '''
@@ -104,8 +105,8 @@ def check_planet_size(state):
                 best_planet = my_planet.ID
                 max_fleet = my_planet.num_ships
                 
-    
-    return (B, best_planet, max_fleet)
+    return B
+    #return (B, best_planet, max_fleet)
 
 #if we are close enough to capture an opposing planet that just sent out a fleet before they regrow their forces
 # For every enemy fleet, check if we have a planet that's the same distance/same amoutn of turns
