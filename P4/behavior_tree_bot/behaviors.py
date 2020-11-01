@@ -129,7 +129,7 @@ def spread(state):
         #    enemy_strongest_planet = planet
 
 
-    if(my_strongest_planet.num_ships>=(enemy_ships_available/(len(state.enemy_planets())+1)) and my_strongest_planet.num_ships + (state.distance(my_strongest_planet,enemy_strongest_planet)*my_strongest_planet.growth_rate) >= enemy_strongest_planet.num_ships*0.5):
+    if(my_strongest_planet.num_ships>=(enemy_ships_available/(len(state.enemy_planets())+1)) and my_strongest_planet.num_ships + (state.distance(my_strongest_planet.ID,enemy_strongest_planet.ID)*my_strongest_planet.growth_rate) >= enemy_strongest_planet.num_ships*0.5):
         issue_order(state, my_strongest_planet.ID, planet_to_take.ID, find_available_ships(my_strongest_planet))
 
 
@@ -174,7 +174,7 @@ def find_minimum_fleet_size(planet):
     min_fleet = 0
     enemy_strongest_planet = find_enemy_strongest_fleet(state)
     my_strongest_planet = find_my_strongest_planet(state)
-    min_fleet = floor(((enemy_strongest_planet.num_ships)-1) - (state.distance(planet,enemy_strongest_planet)*planet.growth_rate))
+    min_fleet = floor(((enemy_strongest_planet.num_ships)-1) - (state.distance(planet.ID,enemy_strongest_planet.ID)*planet.growth_rate))
 
     return min_fleet
 

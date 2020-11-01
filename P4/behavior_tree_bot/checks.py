@@ -109,6 +109,11 @@ def check_planet_size(state):
 # closest_planet = (our planet ID, enemy planet ID)
 def check_enemy_forces(state):
     
+#if we are about to lose a planet
+# if enemy fleet is number of turns away
+# checking this function?
+#def planet_status(state):
+
     close_by = False
     closest_planet_dist = math.inf
     our_closest_planet = None
