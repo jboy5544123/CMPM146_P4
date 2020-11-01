@@ -47,13 +47,13 @@ def spread_to_weakest_neutral_planet(state):
     #Cheese - attacking an enemy planet that just sent a fleet to another planet
 def cheese(state):
 
-    sending_planet = find_my_strongest_planet(state)
+    #sending_planet = find_my_strongest_planet(state)
+    #enemy_planet = find_enemy_weakest_planet(state)
+    
+    sending_planet = max(state.my_planets(), key=lambda t: t.num_ships, default=None)
+    enemy_planet = min(state.enemy_planets(), key=lambda t: t.num_ships, default=None)
 
-    enemy_planet = find_enemy_weakest_planet
-
-
-
-    issue_order(state, sending_planet.ID, enemy_planet.ID, find_available_ships(sending_planet))
+    return issue_order(state, sending_planet.ID, enemy_planet.ID, find_available_ships(state, sending_planet))
 
 
     #Suppression - continually send ships at the rate they are being made at a certain enemy planet after
@@ -174,15 +174,15 @@ def find_enemy_weakest_planet(state):
 
 def find_minimum_fleet_size(planet, state):
     min_fleet = 0
-    enemy_strongest_planet = find_enemy_strongest_planet(state)
-    my_strongest_planet = find_my_strongest_planet(state)
+    enemy_strongest_planet = min(state.enemy_planets(), key=lambda t: t.num_ships, default=None)
+    #my_strongest_planet = max(state.my_planets(), key=lambda t: t.num_ships, default=None)
     min_fleet = floor(((enemy_strongest_planet.num_ships)-1) - (state.distance(planet.ID,enemy_strongest_planet.ID)*planet.growth_rate))
 
     return min_fleet
 
-def find_available_ships(planet):
+def find_available_ships(state, planet):
     available_ships = 0
-    available_ships = floor((planet.num_ships) - find_minimum_fleet_size(planet))
+    available_ships = floor((planet.num_ships) - find_minimum_fleet_size(planet, state))
 
     return available_ships
 
