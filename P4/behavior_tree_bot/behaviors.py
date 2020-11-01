@@ -55,6 +55,8 @@ def cheese(state):
     
     check = find_available_ships(state, sending_planet)
     
+    #return issue_order(state, sending_planet.ID, enemy_planet.ID, find_available_ships(state, sending_planet))
+    
     if(check > 0):
         return issue_order(state, sending_planet.ID, enemy_planet.ID, check)
     else:
