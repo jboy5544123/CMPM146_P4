@@ -13,7 +13,7 @@ def have_largest_fleet(state):
 
 
 
-'''
+
 #if theres an enemy fleet in transit towards a neutral planet that is closer to us
 # return neautral planet closest to us and enemy fleet size
 # return (closest_neutral, enemy fleet size)
@@ -41,14 +41,14 @@ def check_surrounding_planets(state):
     #return (B, closest_neutral, closest_neutral_dist)
             
   
-'''
+
 
 #if we are about to lose a planet
 # if enemy fleet is number of turns away
 # checking this function?
 #def planet_status(state):
 
-'''
+
 #if we have a planet that is significantly larger than an opposing planet that is currently being suppressed
 # if a planet is x2(?) num_ships than opposing planet, check if it's the max amount of all we found
 # Returns planet ID with the highest number of fleets available
@@ -84,32 +84,45 @@ def check_planet_size(state):
     return B
     #return (B, best_planet, max_fleet)
     
-'''
 
-#if we are close enough to capture an opposing planet that just sent out a fleet before they regrow their forces
+
 # For every enemy fleet, check if we have a planet that's the same distance/same amoutn of turns
 # away from destination planet and min planet.num_ships > fleet strength-planet ships
 # return boolean
 def check_enemy_forces(state):
     
-    for enemy_fleet in state.my_fleets():
+    own = state.my_planets()
+    other = state.not_my_planets()
+    
+    for enemy_fleet in state.enemy_fleets():
         
         enemy_dist = enemy_fleet.total_trip_length
         enemy_dest = enemy_fleet.destination_planet
         
+        if(enemy_dest in own): # dest planet is ours
+            dest = own[enemy_dest]
+        else: # not ours
+            dest = other[enemy_dest]
+            
+        
+        
+        '''
+        enemy_dist = enemy_fleet.total_trip_length
+        enemy_src = enemy_fleet.source_planet
+        src_planet = state.enemy_planets()[enemy_src]
+        
         
         for my_planet in state.my_planets():
-        
-            our_dist = state.distance(my_planet.ID, enemy_dest)
-            our_ships = find_available_ships(my_planet)
+            
+            our_dist = state.distance(my_planet.ID, src_planet.ID)
+            our_ships = find_available_ships(state, my_planet)
+            enemy_ships = enemy_fleet.num_ships - src_planet.num_ships
             
             # if same distance as enemy and our num is greater then send true
-            if((our_dist == enemy_dist) and (our_ships > (enemy_fleet.num_ships - enemy_dest.num_ships))):
+            if(our_dist == enemy_dist and our_ships > enemy_ships):
                 return True
-            
-    return False
-    
-'''            
+        '''
+    return True
 
 #if we are winning or losing
 # if we have less planets than the enemy, return 0; otherwise, return 1
@@ -174,8 +187,6 @@ def max_dist(state):
                 
     return (our_planet, dest_planet)
 
-'''
-'''
 # check distance but it's a list'
 # returns a dict dist with a pair (our planet, dest planet) and the distance between them
 # dict = {(our planet ID, dest planet ID) :  distance}
@@ -189,8 +200,7 @@ def check_dist(state):
             dist[(my_planet.ID, dest_planet.ID)] = state.distance(my_planet.ID, dest_planet.ID)
             
     return dist
-'''
-'''
+
 
 # compares fleet sizes vs every other
 # Returns list with planet id with biggest positive different and biggest negative difference
@@ -221,10 +231,7 @@ def check_fleet_sizes(state):
     
     return l
     
-    
 
-'''
-'''
 #comparing fleet sizes of planets (returns list)
 # Compare our planet fleets vs every other planet fleets
 # Returns planet id with biggest positive different and biggest negative difference
@@ -238,8 +245,7 @@ def check_fleet_sizes(state):
             sizes[(my_planet.ID, other_planet.ID)] = my_planet.num_ships - other_planet.num_ships
             
     return sizes
-'''
-'''
+
 #determine what is a safe minimum fleet size for planets that are supressing other planets
 # checks enemy fleets on the way to our planets; finds biggest fleet
 # and sends that to determine how much we need to add later
@@ -255,7 +261,7 @@ def safe_min(state):
             safe_min = enemy_fleet.num_ships
         
     return safe_min
-'''
+
 # HELPER FCNS
 
 def find_my_strongest_planet(state):
@@ -302,9 +308,9 @@ def find_minimum_fleet_size(planet, state):
 
     return min_fleet
 
-def find_available_ships(planet):
+def find_available_ships(state, planet):
     available_ships = 0
-    available_ships = floor((planet.num_ships) - find_minimum_fleet_size(planet))
+    available_ships = floor((planet.num_ships) - find_minimum_fleet_size(planet, state))
 
     return available_ships
 
