@@ -26,7 +26,7 @@ def setup_behavior_tree():
     root = Selector(name='High Level Ordering of Strategies')
     
     cheese_plan = Sequence(name='Cheese Plan')
-    cheese_check = Check(check_enemy_forces)
+    cheese_check = Check(cheese_check)
     a = Action(cheese)
     cheese_plan.child_nodes = [cheese_check, a]
     

@@ -14,6 +14,20 @@ def have_largest_fleet(state):
 
 
 
+
+
+def cheese_check(state):
+
+    for enemy_planet in state.enemy_planets():
+        if(enemy_planet.num_ships + state.distance(enemy_planet.ID, find_my_strongest_planet(state).ID)*enemy_planet.growth_rate < ((find_my_strongest_planet(state)).num_ships)-1):
+            return True
+
+    return False
+
+
+
+
+
 #if theres an enemy fleet in transit towards a neutral planet that is closer to us
 # return neautral planet closest to us and enemy fleet size
 # return (closest_neutral, enemy fleet size)
@@ -254,19 +268,23 @@ def safe_min(state):
 # HELPER FCNS
 
 def find_my_strongest_planet(state):
-    my_strongest_planet = state.my_planets()[0]
-    for planet in state.my_planets():
-        if(my_strongest_planet.num_ships <= planet.num_ships):
-            my_strongest_planet = planet
+    #my_strongest_planet = state.my_planets()[0]
+    #for planet in state.my_planets():
+    #    if(my_strongest_planet.num_ships <= planet.num_ships):
+    #        my_strongest_planet = planet
+
+    my_strongest_planet = max(state.my_planets(), key=lambda t: t.num_ships, default=None)
 
     return my_strongest_planet
 
 
 def find_enemy_strongest_planet(state):
-    enemy_strongest_planet = state.enemy_planets()[0]
-    for planet in state.enemy_planets():
-        if(enemy_strongest_planet.num_ships <= planet.num_ships):
-            enemy_strongest_planet = planet
+    #enemy_strongest_planet = state.enemy_planets()[0]
+    #for planet in state.enemy_planets():
+    #    if(enemy_strongest_planet.num_ships <= planet.num_ships):
+    #        enemy_strongest_planet = planet
+
+    enemy_strongest_planet = max(state.enemy_planets(), key=lambda t: t.num_ships, default=None)
 
     return enemy_strongest_planet
 
