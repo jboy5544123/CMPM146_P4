@@ -100,11 +100,12 @@ def check_planet_size(state):
             if((enemy_planet.ID in fleet_dest) and (my_planet.num_ships > enemy_planet.num_ships) and
                (my_planet.num_ships > max_fleet)):
                 
+                B = True
                 best_planet = my_planet.ID
                 max_fleet = my_planet.num_ships
                 
     
-    return (best_planet, max_fleet)
+    return (B, best_planet, max_fleet)
 
 #if we are close enough to capture an opposing planet that just sent out a fleet before they regrow their forces
 # For every enemy fleet, check if we have a planet that's the same distance/same amoutn of turns
