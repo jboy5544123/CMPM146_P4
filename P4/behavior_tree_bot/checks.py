@@ -11,22 +11,29 @@ def have_largest_fleet(state):
            > sum(planet.num_ships for planet in state.enemy_planets()) \
              + sum(fleet.num_ships for fleet in state.enemy_fleets())
 
-
-
-
-
-
-def cheese_check(state):
-
+# check for cheese
+def check_cheese(state):
+    
     for enemy_planet in state.enemy_planets():
-        if(enemy_planet.num_ships + state.distance(enemy_planet.ID, find_my_strongest_planet(state).ID)*enemy_planet.growth_rate < ((find_my_strongest_planet(state)).num_ships)-1):
+        
+        # if there's no enemy planets
+        if(enemy_planet is None):
+            return False
+        
+        my_strongest_planet = max(state.my_planets(), key=lambda t: t.num_ships, default=None)
+        
+        # if we don't have any planets
+        if(my_strongest_planet is None):
+            return False
+        
+        # just splitting up the if statement
+        first = enemy_planet.num_ships + state.distance(enemy_planet.ID, my_strongest_planet.ID)*enemy_planet.growth_rate
+        second = (my_strongest_planet.num_ships)-1
+        
+        if(first < second):
             return True
 
     return False
-
-
-
-
 
 #if theres an enemy fleet in transit towards a neutral planet that is closer to us
 # return neautral planet closest to us and enemy fleet size
@@ -53,8 +60,6 @@ def check_surrounding_planets(state):
      
     return B
     #return (B, closest_neutral, closest_neutral_dist)
-            
-  
 
 
 #if we are about to lose a planet
