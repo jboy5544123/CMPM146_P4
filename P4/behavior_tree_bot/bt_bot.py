@@ -27,7 +27,6 @@ def setup_behavior_tree():
     
     cheese_plan = Sequence(name='Cheese Plan')
     cheese_check = Check(check_cheese)
-    #a = Action(attack_weakest_enemy_planet)
     a = Action(cheese)
     cheese_plan.child_nodes = [cheese_check, a]
     
