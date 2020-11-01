@@ -311,13 +311,13 @@ def find_minimum_fleet_size(planet, state):
     min_fleet = 0
     enemy_strongest_planet = find_enemy_strongest_planet(state)
     my_strongest_planet = find_my_strongest_planet(state)
-    min_fleet = floor(((enemy_strongest_planet.num_ships)-1) - (state.distance(planet.ID,enemy_strongest_planet.ID)*planet.growth_rate))
+    min_fleet = ((enemy_strongest_planet.num_ships)-1) - (state.distance(planet.ID,enemy_strongest_planet.ID)*planet.growth_rate)
 
     return min_fleet
 
 def find_available_ships(state, planet):
     available_ships = 0
-    available_ships = floor((planet.num_ships) - find_minimum_fleet_size(planet, state))
+    available_ships = (planet.num_ships) - find_minimum_fleet_size(planet, state)
 
     return available_ships
 
