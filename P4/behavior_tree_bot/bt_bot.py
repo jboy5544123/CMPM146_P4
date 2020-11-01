@@ -12,9 +12,9 @@ currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentfram
 parentdir = os.path.dirname(currentdir)
 sys.path.append(parentdir)
 
-from behavior_tree_bot.behaviors import *
-from behavior_tree_bot.checks import *
-from behavior_tree_bot.bt_nodes import Selector, Sequence, Action, Check
+from behaviors import *
+from checks import *
+from bt_nodes import Selector, Sequence, Action, Check
 
 from planet_wars import PlanetWars, finish_turn
 
