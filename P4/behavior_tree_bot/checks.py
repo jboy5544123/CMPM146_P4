@@ -110,7 +110,7 @@ def check_planet_size(state):
 
 #if we are close enough to capture an opposing planet that just sent out a fleet before they regrow their forces
 # For every enemy fleet, check if we have a planet that's the same distance/same amoutn of turns
-# away from destination planet and planet.num_ships > fleet strength-planet ships
+# away from destination planet and min planet.num_ships > fleet strength-planet ships
 # return boolean
 def check_enemy_forces(state):
     
@@ -123,8 +123,10 @@ def check_enemy_forces(state):
         for my_planet in state.my_planets():
         
             our_dist = state.distance(my_planet.ID, enemy_dest)
+            our_ships = find_available_ships(my_planet)
             
-            if((our_dist == enemy_dist) and (my_planet.num_ships > (enemy_fleet.num_ships - enemy_dest.num_ships))):
+            # if same distance as enemy and our num is greater then send true
+            if((our_dist == enemy_dist) and (our_ships > (enemy_fleet.num_ships - enemy_dest.num_ships))):
                 return True
             
     return False
