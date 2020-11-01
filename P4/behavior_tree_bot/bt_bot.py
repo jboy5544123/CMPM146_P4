@@ -24,32 +24,28 @@ def setup_behavior_tree():
 
     # Top-down construction of behavior tree
     root = Selector(name='High Level Ordering of Strategies')
-
     
-    cheese_plan = Sequence(name='Cheese Strategy')
-    if(Check(check_enemy_forces)):
-        cheese_check = True
-        cheese = Action(cheese)
+    cheese_plan = Sequence(name='Cheese Plan')
+    cheese_check = Check(check_enemy_forces)
+    if(cheese_check):
+        a = Action(cheese)
     else:
-        cheese_check = False
-        cheese = False
-    cheese_plan.child_nodes = [cheese_check, cheese]
+        a = False
+    cheese_plan.child_nodes = [cheese_check, a]
     
-
-    offensive_plan = Sequence(name='Offensive_Strategy')
+    offensive_plan = Sequence(name='Offensive Strategy')
     largest_fleet_check = Check(have_largest_fleet)
     attack = Action(attack_weakest_enemy_planet)
     offensive_plan.child_nodes = [largest_fleet_check, attack]
-
-
 
     spread_sequence = Sequence(name='Spread Strategy')
     neutral_planet_check = Check(if_neutral_planet_available)
     spread_action = Action(spread_to_weakest_neutral_planet)
     spread_sequence.child_nodes = [neutral_planet_check, spread_action]
-
+    
+    #offensive_plan, spread_sequence
     root.child_nodes = [cheese_plan, offensive_plan, spread_sequence, attack.copy()]
-
+    
     logging.info('\n' + root.tree_to_string())
     return root
 
@@ -58,7 +54,6 @@ def do_turn(state):
     behavior_tree.execute(planet_wars)
 
 if __name__ == '__main__':
-    print('we got to the main of bt_bot.py')
     logging.basicConfig(filename=__file__[:-3] + '.log', filemode='w', level=logging.DEBUG)
 
     behavior_tree = setup_behavior_tree()
