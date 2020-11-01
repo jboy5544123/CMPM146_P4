@@ -37,9 +37,9 @@ def setup_behavior_tree():
 """
 
     offensive_plan = Sequence(name='Offensive_Strategy')
-    attack_planet_check = Check(have_largest_fleet)
+    largest_fleet_check = Check(have_largest_fleet)
     attack = Action(attack_weakest_enemy_planet)
-    offensive_plan.child_nodes = [attack_planet_check, action]
+    offensive_plan.child_nodes = [largest_fleet_check, attack]
 
 
 
