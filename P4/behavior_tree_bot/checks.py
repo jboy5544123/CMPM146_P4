@@ -13,7 +13,7 @@ def have_largest_fleet(state):
 
 
 
-
+"""
 #if theres an enemy fleet in transit towards a neutral planet that is closer to us
 # return neautral planet closest to us and enemy fleet size
 # return (closest_neutral, enemy fleet size)
@@ -360,3 +360,6 @@ def find_available_ships(planet):
     available_ships = floor((planet.num_ships) - find_minimum_fleet_size(planet))
 
     return available_ships
+
+
+"""

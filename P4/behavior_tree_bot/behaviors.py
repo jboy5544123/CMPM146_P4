@@ -40,7 +40,7 @@ def spread_to_weakest_neutral_planet(state):
         # (4) Send half the ships from my strongest planet to the weakest enemy planet.
         return issue_order(state, strongest_planet.ID, weakest_planet.ID, strongest_planet.num_ships / 2)
 
-
+"""
 #Attacking Strategy:
 
     #Cheese - attacking an enemy planet that just sent a fleet to another planet
@@ -199,3 +199,4 @@ def find_available_ships(planet):
     #if we are losing abandon the planet unless its our last planet
 
     #
+"""
