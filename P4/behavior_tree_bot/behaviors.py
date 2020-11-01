@@ -1,4 +1,5 @@
 import sys
+from math import floor
 sys.path.insert(0, '../')
 from planet_wars import issue_order
 
@@ -40,7 +41,7 @@ def spread_to_weakest_neutral_planet(state):
         # (4) Send half the ships from my strongest planet to the weakest enemy planet.
         return issue_order(state, strongest_planet.ID, weakest_planet.ID, strongest_planet.num_ships / 2)
 
-"""
+
 #Attacking Strategy:
 
     #Cheese - attacking an enemy planet that just sent a fleet to another planet
@@ -70,6 +71,7 @@ def cheese(state):
     #
 
 #Spreading Strategy:
+    '''
 
     #taking a neutral planet thats closer to us right after it is taken by opponent
 def over_spreading(state):
@@ -85,7 +87,7 @@ def over_spreading(state):
 
     for neut_planet in state.neutral_planets():
         for enemy_fleet in state.enemy_fleets():
-            if (enemy_fleet.destination_planet == neut_planet and distance(enemy_fleet.source_planet, neut_planet) <= distance(sending_planet, neut_planet)):
+            if (enemy_fleet.destination_planet == neut_planet and state.distance(enemy_fleet.source_planet, neut_planet) <= state.distance(sending_planet, neut_planet)):
                 neutral_planet = neut_planet
 
 
@@ -109,7 +111,7 @@ def spread(state):
     for planet in state.neutral_planets():
         planet_value = planet.num_ships*cost_weight + planet.growth_rate*growth_weight + state.distance(state.my_planets[0], planet)*distance_weight
 
-        if(planet_vlaue <= value):
+        if(planet_value <= value):
             value = planet_value
             planet_to_take = planet
 
@@ -131,7 +133,7 @@ def spread(state):
 
     if(my_strongest_planet.num_ships>=(enemy_ships_available/(len(state.enemy_planets())+1)) and my_strongest_planet.num_ships + (state.distance(my_strongest_planet.ID,enemy_strongest_planet.ID)*my_strongest_planet.growth_rate) >= enemy_strongest_planet.num_ships*0.5):
         issue_order(state, my_strongest_planet.ID, planet_to_take.ID, find_available_ships(my_strongest_planet))
-
+        '''
 
 
 def find_my_strongest_planet(state):
@@ -161,7 +163,7 @@ def find_my_weakest_planet(state):
     return my_weakest_planet
 
 
-def find_enemy_weakest_planet(state);
+def find_enemy_weakest_planet(state):
     enemy_weakest_planet = state.enemy_planets()[0]
     for planet in state.enemy_planets():
         if(enemy_weakest_planet.num_ships >= planet.num_ships):
@@ -170,9 +172,9 @@ def find_enemy_weakest_planet(state);
     return enemy_weakest_planet
 
 
-def find_minimum_fleet_size(planet):
+def find_minimum_fleet_size(planet, state):
     min_fleet = 0
-    enemy_strongest_planet = find_enemy_strongest_fleet(state)
+    enemy_strongest_planet = find_enemy_strongest_planet(state)
     my_strongest_planet = find_my_strongest_planet(state)
     min_fleet = floor(((enemy_strongest_planet.num_ships)-1) - (state.distance(planet.ID,enemy_strongest_planet.ID)*planet.growth_rate))
 
@@ -199,4 +201,4 @@ def find_available_ships(planet):
     #if we are losing abandon the planet unless its our last planet
 
     #
-"""
+
