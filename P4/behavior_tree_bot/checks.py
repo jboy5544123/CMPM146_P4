@@ -124,7 +124,7 @@ def check_enemy_forces(state):
         
             our_dist = state.distance(my_planet.ID, enemy_dest)
             
-            if((our_dist <= enemy_dist) and (my_planet.num_ships > (enemy_fleet.num_ships - enemy_dest.num_ships))):
+            if((our_dist == enemy_dist) and (my_planet.num_ships > (enemy_fleet.num_ships - enemy_dest.num_ships))):
                 return True
             
     return False
