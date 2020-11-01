@@ -92,33 +92,22 @@ def check_planet_size(state):
 def check_enemy_forces(state):
     
     own = state.my_planets()
-    other = state.not_my_planets()
+    other = state.neutral_planets()
     
+    #print('checking enemy fleets')
     for enemy_fleet in state.enemy_fleets():
         
         enemy_dist = enemy_fleet.total_trip_length
         enemy_dest = enemy_fleet.destination_planet
         
-        if(enemy_dest in own): # dest planet is ours
-            dest = own[enemy_dest]
-        else: # not ours
-            dest = other[enemy_dest]
-            
-        
-        
+    
         '''
-        enemy_dist = enemy_fleet.total_trip_length
-        enemy_src = enemy_fleet.source_planet
-        src_planet = state.enemy_planets()[enemy_src]
-        
-        
         for my_planet in state.my_planets():
             
-            our_dist = state.distance(my_planet.ID, src_planet.ID)
+            our_dist = state.distance(my_planet.ID, dest.ID)
             our_ships = find_available_ships(state, my_planet)
-            enemy_ships = enemy_fleet.num_ships - src_planet.num_ships
+            enemy_ships = enemy_fleet.num_ships - dest.num_ships
             
-            # if same distance as enemy and our num is greater then send true
             if(our_dist == enemy_dist and our_ships > enemy_ships):
                 return True
         '''
