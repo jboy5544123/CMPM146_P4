@@ -27,7 +27,8 @@ def setup_behavior_tree():
     
     cheese_plan = Sequence(name='Cheese Plan')
     cheese_check = Check(cheese_check)
-    a = Action(cheese)
+    #a = Action(cheese)
+    a = false
     cheese_plan.child_nodes = [cheese_check, a]
     
     offensive_plan = Sequence(name='Offensive Strategy')
