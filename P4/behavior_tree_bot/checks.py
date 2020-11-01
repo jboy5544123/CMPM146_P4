@@ -11,20 +11,20 @@ def have_largest_fleet(state):
            > sum(planet.num_ships for planet in state.enemy_planets()) \
              + sum(fleet.num_ships for fleet in state.enemy_fleets())
 
-# check for cheese
+# cheese check
 def check_cheese(state):
+    
+    # checking if the enemy doesn't have any more planets
+    # or if we don't have any planets
+    if (len(state.enemy_planets()) <= 0):
+        return False
+    
+    if (len(state.my_planets()) <= 0):
+        return False
     
     for enemy_planet in state.enemy_planets():
         
-        # if there's no enemy planets
-        if(enemy_planet is None):
-            return False
-        
         my_strongest_planet = max(state.my_planets(), key=lambda t: t.num_ships, default=None)
-        
-        # if we don't have any planets
-        if(my_strongest_planet is None):
-            return False
         
         # just splitting up the if statement
         first = enemy_planet.num_ships + state.distance(enemy_planet.ID, my_strongest_planet.ID)*enemy_planet.growth_rate
