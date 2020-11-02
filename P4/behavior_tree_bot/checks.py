@@ -116,21 +116,20 @@ def check_enemy_forces(state):
     #print('checking enemy fleets')
     for enemy_fleet in state.enemy_fleets():
 
-        enemy_dist = enemy_fleet.total_trip_length
+        enemy_dist = enemy_fleet.turns_remaining
         enemy_dest = enemy_fleet.destination_planet
+        for neutral in state.neutral_planets():
+            if(enemy_dest == neutral.ID):
+                for my_planet in state.my_planets():
 
+                    our_dist = state.distance(my_planet.ID, enemy_dest)
+                    our_ships = find_available_ships(state, my_planet)
+                    enemy_ships = enemy_fleet.num_ships - neutral.num_ships
 
-        '''
-        for my_planet in state.my_planets():
+                    if(our_dist >= enemy_dist and our_ships > enemy_ships):
+                        return True
 
-            our_dist = state.distance(my_planet.ID, dest.ID)
-            our_ships = find_available_ships(state, my_planet)
-            enemy_ships = enemy_fleet.num_ships - dest.num_ships
-
-            if(our_dist == enemy_dist and our_ships > enemy_ships):
-                return True
-        '''
-    return True
+    return False
 
 #if we are winning or losing
 # if we have less planets than the enemy, return 0; otherwise, return 1

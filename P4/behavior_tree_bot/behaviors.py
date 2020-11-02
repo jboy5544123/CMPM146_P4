@@ -77,7 +77,7 @@ def cheese(state):
     #
 
 #Spreading Strategy:
-    '''
+
 
     #taking a neutral planet thats closer to us right after it is taken by opponent
 def over_spreading(state):
@@ -102,6 +102,7 @@ def over_spreading(state):
 
     #taking a neutral planet that is reasonably close to us in order of least cost while maintaining out original fleet count
     #to a reasonable degree
+    
 def spread(state):
     #(1) assign weights to distance to planet, cost, and growth weight
     distance_weight = 1
@@ -139,7 +140,7 @@ def spread(state):
 
     if(my_strongest_planet.num_ships>=(enemy_ships_available/(len(state.enemy_planets())+1)) and my_strongest_planet.num_ships + (state.distance(my_strongest_planet.ID,enemy_strongest_planet.ID)*my_strongest_planet.growth_rate) >= enemy_strongest_planet.num_ships*0.5):
         issue_order(state, my_strongest_planet.ID, planet_to_take.ID, find_available_ships(my_strongest_planet))
-        '''
+
 
 
 def find_my_strongest_planet(state):
@@ -197,7 +198,7 @@ def find_available_ships(state, planet):
         available_ships = (planet.num_ships)-1
 
     return available_ships
-    
+
 
 
 #Defending Strategy:
