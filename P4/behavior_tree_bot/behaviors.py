@@ -140,7 +140,9 @@ def spread(state):
             if(find_available_ships(state, my_planets) > 0 and planet_to_take is not None):
                 return issue_order(state, my_planets.ID, planet_to_take.ID, find_available_ships(state, my_planets))
 
-    
+    return False
+
+
 def find_my_strongest_planet(state):
     my_strongest_planet = state.my_planets()[0]
     for planet in state.my_planets():
