@@ -99,12 +99,12 @@ def over_spreading(state):
     #maybe implement something to find the best planet to use
     sending_planet = find_my_strongest_planet(state)
 
-
-    for neut_planet in state.neutral_planets():
-        for enemy_fleet in state.enemy_fleets():
-            if (enemy_fleet.destination_planet == neut_planet.ID and state.distance(enemy_fleet.source_planet, neut_planet.ID) <= state.distance(sending_planet.ID, neut_planet.ID)):
-                if (find_available_ships(state,sending_planet) > 0):
-                    return issue_order(state, sending_planet.ID, neut_planet.ID, find_available_ships(state, sending_planet))
+    for my_planet in state.my_planets():
+        for neut_planet in state.neutral_planets():
+            for enemy_fleet in state.enemy_fleets():
+                if (enemy_fleet.destination_planet == neut_planet.ID and state.distance(enemy_fleet.source_planet, neut_planet.ID) <= state.distance(my_planet.ID, neut_planet.ID)):
+                    if (find_available_ships(state,sending_planet) > 0):
+                        issue_order(state, my_planet.ID, neut_planet.ID, find_available_ships(state, my_planet))
 
 
     return False
