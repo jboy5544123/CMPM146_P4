@@ -6,9 +6,6 @@ Selector: High Level Ordering of Strategies
 | Sequence: Enemy Overspreading Strategy
 | | Check: check_enemy_forces
 | | Action: over_spreading
-| Sequence: Spread Strategy
-| | Check: if_neutral_planet_available
-| | Action: spread
 
 DEBUG:root:Executing:Selector: High Level Ordering of Strategies
 DEBUG:root:Executing:Sequence: Cheese Plan
@@ -19,12 +16,6 @@ DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
 DEBUG:root:Executing:Check: check_enemy_forces
 DEBUG:root:Result: Check: check_enemy_forces -> Failure
 DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
 DEBUG:root:Finish turn
 
@@ -40,12 +31,6 @@ DEBUG:root:Executing:Action: over_spreading
 DEBUG:root:Order:1 9 21.0
 DEBUG:root:Result: Action: over_spreading -> Failure
 DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
 DEBUG:root:Finish turn
 
@@ -61,12 +46,6 @@ DEBUG:root:Executing:Action: over_spreading
 DEBUG:root:Order:1 11 17.0
 DEBUG:root:Result: Action: over_spreading -> Failure
 DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
 DEBUG:root:Finish turn
 
@@ -84,12 +63,6 @@ DEBUG:root:Order:1 11 5.0
 DEBUG:root:Order:1 17 24.0
 DEBUG:root:Result: Action: over_spreading -> Failure
 DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
 DEBUG:root:Finish turn
 
@@ -106,12 +79,6 @@ DEBUG:root:Order:1 11 5.0
 DEBUG:root:Order:1 17 2.0
 DEBUG:root:Result: Action: over_spreading -> Failure
 DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
 DEBUG:root:Finish turn
 
@@ -129,12 +96,6 @@ DEBUG:root:Order:1 11 5.0
 DEBUG:root:Order:1 17 2.0
 DEBUG:root:Result: Action: over_spreading -> Failure
 DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
 DEBUG:root:Finish turn
 
@@ -153,12 +114,6 @@ DEBUG:root:Order:1 11 5.0
 DEBUG:root:Order:1 17 2.0
 DEBUG:root:Result: Action: over_spreading -> Failure
 DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
 DEBUG:root:Finish turn
 
@@ -177,12 +132,6 @@ DEBUG:root:Executing:Action: over_spreading
 DEBUG:root:Order:1 17 2.0
 DEBUG:root:Result: Action: over_spreading -> Failure
 DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
 DEBUG:root:Finish turn
 
@@ -200,12 +149,6 @@ DEBUG:root:Executing:Action: over_spreading
 DEBUG:root:Order:1 17 2.0
 DEBUG:root:Result: Action: over_spreading -> Failure
 DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
 DEBUG:root:Finish turn
 
@@ -224,12 +167,6 @@ DEBUG:root:Result: Check: check_enemy_forces -> Success
 DEBUG:root:Executing:Action: over_spreading
 DEBUG:root:Result: Action: over_spreading -> Failure
 DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
 DEBUG:root:Finish turn
 
@@ -248,12 +185,6 @@ DEBUG:root:Executing:Action: over_spreading
 DEBUG:root:Order:1 5 15.0
 DEBUG:root:Result: Action: over_spreading -> Failure
 DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
 DEBUG:root:Finish turn
 
@@ -271,12 +202,6 @@ DEBUG:root:Result: Check: check_enemy_forces -> Success
 DEBUG:root:Executing:Action: over_spreading
 DEBUG:root:Result: Action: over_spreading -> Failure
 DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
 DEBUG:root:Finish turn
 
@@ -294,12 +219,6 @@ DEBUG:root:Executing:Action: over_spreading
 DEBUG:root:Order:1 5 2.0
 DEBUG:root:Result: Action: over_spreading -> Failure
 DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
 DEBUG:root:Finish turn
 
@@ -317,12 +236,6 @@ DEBUG:root:Result: Check: check_enemy_forces -> Success
 DEBUG:root:Executing:Action: over_spreading
 DEBUG:root:Result: Action: over_spreading -> Failure
 DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
 DEBUG:root:Finish turn
 
@@ -340,12 +253,6 @@ DEBUG:root:Executing:Action: over_spreading
 DEBUG:root:Order:1 5 2.0
 DEBUG:root:Result: Action: over_spreading -> Failure
 DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
 DEBUG:root:Finish turn
 
@@ -363,12 +270,6 @@ DEBUG:root:Result: Check: check_enemy_forces -> Success
 DEBUG:root:Executing:Action: over_spreading
 DEBUG:root:Result: Action: over_spreading -> Failure
 DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
 DEBUG:root:Finish turn
 
@@ -387,12 +288,6 @@ DEBUG:root:Executing:Action: over_spreading
 DEBUG:root:Order:1 5 2.0
 DEBUG:root:Result: Action: over_spreading -> Failure
 DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
 DEBUG:root:Finish turn
 
@@ -410,12 +305,6 @@ DEBUG:root:Result: Check: check_enemy_forces -> Success
 DEBUG:root:Executing:Action: over_spreading
 DEBUG:root:Result: Action: over_spreading -> Failure
 DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
 DEBUG:root:Finish turn
 
@@ -433,12 +322,6 @@ DEBUG:root:Executing:Action: over_spreading
 DEBUG:root:Order:1 5 2.0
 DEBUG:root:Result: Action: over_spreading -> Failure
 DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
 DEBUG:root:Finish turn
 
@@ -456,12 +339,6 @@ DEBUG:root:Result: Check: check_enemy_forces -> Success
 DEBUG:root:Executing:Action: over_spreading
 DEBUG:root:Result: Action: over_spreading -> Failure
 DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
 DEBUG:root:Finish turn
 
@@ -480,12 +357,6 @@ DEBUG:root:Result: Check: check_enemy_forces -> Success
 DEBUG:root:Executing:Action: over_spreading
 DEBUG:root:Result: Action: over_spreading -> Failure
 DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
 DEBUG:root:Finish turn
 
@@ -503,12 +374,6 @@ DEBUG:root:Result: Check: check_enemy_forces -> Success
 DEBUG:root:Executing:Action: over_spreading
 DEBUG:root:Result: Action: over_spreading -> Failure
 DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
 DEBUG:root:Finish turn
 
@@ -527,12 +392,6 @@ DEBUG:root:Result: Check: check_enemy_forces -> Success
 DEBUG:root:Executing:Action: over_spreading
 DEBUG:root:Result: Action: over_spreading -> Failure
 DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
 DEBUG:root:Finish turn
 
@@ -550,12 +409,6 @@ DEBUG:root:Result: Check: check_enemy_forces -> Success
 DEBUG:root:Executing:Action: over_spreading
 DEBUG:root:Result: Action: over_spreading -> Failure
 DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
 DEBUG:root:Finish turn
 
@@ -574,12 +427,6 @@ DEBUG:root:Result: Check: check_enemy_forces -> Success
 DEBUG:root:Executing:Action: over_spreading
 DEBUG:root:Result: Action: over_spreading -> Failure
 DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
 DEBUG:root:Finish turn
 
@@ -597,12 +444,6 @@ DEBUG:root:Result: Check: check_enemy_forces -> Success
 DEBUG:root:Executing:Action: over_spreading
 DEBUG:root:Result: Action: over_spreading -> Failure
 DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
 DEBUG:root:Finish turn
 
@@ -623,12 +464,6 @@ DEBUG:root:Executing:Action: over_spreading
 DEBUG:root:Order:1 0 5.0
 DEBUG:root:Result: Action: over_spreading -> Failure
 DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
 DEBUG:root:Finish turn
 
@@ -646,12 +481,6 @@ DEBUG:root:Executing:Action: over_spreading
 DEBUG:root:Order:1 0 3.0
 DEBUG:root:Result: Action: over_spreading -> Failure
 DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
 DEBUG:root:Finish turn
 
@@ -670,12 +499,6 @@ DEBUG:root:Executing:Action: over_spreading
 DEBUG:root:Order:1 0 3.0
 DEBUG:root:Result: Action: over_spreading -> Failure
 DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
 DEBUG:root:Finish turn
 
@@ -693,12 +516,6 @@ DEBUG:root:Executing:Action: over_spreading
 DEBUG:root:Order:1 0 3.0
 DEBUG:root:Result: Action: over_spreading -> Failure
 DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
 DEBUG:root:Finish turn
 
@@ -717,12 +534,6 @@ DEBUG:root:Executing:Action: over_spreading
 DEBUG:root:Order:1 0 3.0
 DEBUG:root:Result: Action: over_spreading -> Failure
 DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
 DEBUG:root:Finish turn
 
@@ -740,12 +551,6 @@ DEBUG:root:Executing:Action: over_spreading
 DEBUG:root:Order:1 0 3.0
 DEBUG:root:Result: Action: over_spreading -> Failure
 DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
 DEBUG:root:Finish turn
 
@@ -764,12 +569,6 @@ DEBUG:root:Executing:Action: over_spreading
 DEBUG:root:Order:1 0 3.0
 DEBUG:root:Result: Action: over_spreading -> Failure
 DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
 DEBUG:root:Finish turn
 
@@ -785,12 +584,6 @@ DEBUG:root:Executing:Action: over_spreading
 DEBUG:root:Order:1 0 3.0
 DEBUG:root:Result: Action: over_spreading -> Failure
 DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
 DEBUG:root:Finish turn
 
@@ -806,12 +599,6 @@ DEBUG:root:Executing:Action: over_spreading
 DEBUG:root:Order:1 0 3.0
 DEBUG:root:Result: Action: over_spreading -> Failure
 DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
 DEBUG:root:Finish turn
 
@@ -830,12 +617,6 @@ DEBUG:root:Executing:Action: over_spreading
 DEBUG:root:Order:1 0 3.0
 DEBUG:root:Result: Action: over_spreading -> Failure
 DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
 DEBUG:root:Finish turn
 
@@ -853,12 +634,6 @@ DEBUG:root:Result: Check: check_enemy_forces -> Success
 DEBUG:root:Executing:Action: over_spreading
 DEBUG:root:Result: Action: over_spreading -> Failure
 DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
 DEBUG:root:Finish turn
 
@@ -875,12 +650,6 @@ DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
 DEBUG:root:Executing:Check: check_enemy_forces
 DEBUG:root:Result: Check: check_enemy_forces -> Failure
 DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
 DEBUG:root:Finish turn
 
@@ -895,12 +664,6 @@ DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
 DEBUG:root:Executing:Check: check_enemy_forces
 DEBUG:root:Result: Check: check_enemy_forces -> Failure
 DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
 DEBUG:root:Finish turn
 
@@ -916,12 +679,6 @@ DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
 DEBUG:root:Executing:Check: check_enemy_forces
 DEBUG:root:Result: Check: check_enemy_forces -> Failure
 DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
 DEBUG:root:Finish turn
 
@@ -937,12 +694,6 @@ DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
 DEBUG:root:Executing:Check: check_enemy_forces
 DEBUG:root:Result: Check: check_enemy_forces -> Failure
 DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
 DEBUG:root:Finish turn
 
@@ -958,12 +709,6 @@ DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
 DEBUG:root:Executing:Check: check_enemy_forces
 DEBUG:root:Result: Check: check_enemy_forces -> Failure
 DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
 DEBUG:root:Finish turn
 
@@ -979,12 +724,6 @@ DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
 DEBUG:root:Executing:Check: check_enemy_forces
 DEBUG:root:Result: Check: check_enemy_forces -> Failure
 DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
 DEBUG:root:Finish turn
 
@@ -999,12 +738,6 @@ DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
 DEBUG:root:Executing:Check: check_enemy_forces
 DEBUG:root:Result: Check: check_enemy_forces -> Failure
 DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
 DEBUG:root:Finish turn
 
@@ -1021,12 +754,6 @@ DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
 DEBUG:root:Executing:Check: check_enemy_forces
 DEBUG:root:Result: Check: check_enemy_forces -> Failure
 DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
 DEBUG:root:Finish turn
 
@@ -1041,12 +768,6 @@ DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
 DEBUG:root:Executing:Check: check_enemy_forces
 DEBUG:root:Result: Check: check_enemy_forces -> Failure
 DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
 DEBUG:root:Finish turn
 
@@ -1063,12 +784,6 @@ DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
 DEBUG:root:Executing:Check: check_enemy_forces
 DEBUG:root:Result: Check: check_enemy_forces -> Failure
 DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
 DEBUG:root:Finish turn
 
@@ -1084,12 +799,6 @@ DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
 DEBUG:root:Executing:Check: check_enemy_forces
 DEBUG:root:Result: Check: check_enemy_forces -> Failure
 DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
 DEBUG:root:Finish turn
 
@@ -1105,12 +814,6 @@ DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
 DEBUG:root:Executing:Check: check_enemy_forces
 DEBUG:root:Result: Check: check_enemy_forces -> Failure
 DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
 DEBUG:root:Finish turn
 
@@ -1126,12 +829,6 @@ DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
 DEBUG:root:Executing:Check: check_enemy_forces
 DEBUG:root:Result: Check: check_enemy_forces -> Failure
 DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
 DEBUG:root:Finish turn
 
@@ -1147,12 +844,6 @@ DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
 DEBUG:root:Executing:Check: check_enemy_forces
 DEBUG:root:Result: Check: check_enemy_forces -> Failure
 DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
 DEBUG:root:Finish turn
 
@@ -1168,12 +859,6 @@ DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
 DEBUG:root:Executing:Check: check_enemy_forces
 DEBUG:root:Result: Check: check_enemy_forces -> Failure
 DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
 DEBUG:root:Finish turn
 
@@ -1189,12 +874,6 @@ DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
 DEBUG:root:Executing:Check: check_enemy_forces
 DEBUG:root:Result: Check: check_enemy_forces -> Failure
 DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
 DEBUG:root:Finish turn
 
@@ -1210,12 +889,6 @@ DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
 DEBUG:root:Executing:Check: check_enemy_forces
 DEBUG:root:Result: Check: check_enemy_forces -> Failure
 DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
 DEBUG:root:Finish turn
 
@@ -1231,12 +904,6 @@ DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
 DEBUG:root:Executing:Check: check_enemy_forces
 DEBUG:root:Result: Check: check_enemy_forces -> Failure
 DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
 DEBUG:root:Finish turn
 
@@ -1252,12 +919,6 @@ DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
 DEBUG:root:Executing:Check: check_enemy_forces
 DEBUG:root:Result: Check: check_enemy_forces -> Failure
 DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
 DEBUG:root:Finish turn
 
@@ -1273,12 +934,6 @@ DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
 DEBUG:root:Executing:Check: check_enemy_forces
 DEBUG:root:Result: Check: check_enemy_forces -> Failure
 DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
 DEBUG:root:Finish turn
 
@@ -1294,12 +949,6 @@ DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
 DEBUG:root:Executing:Check: check_enemy_forces
 DEBUG:root:Result: Check: check_enemy_forces -> Failure
 DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
 DEBUG:root:Finish turn
 
