@@ -49,7 +49,7 @@ def setup_behavior_tree():
     spread_sequence.child_nodes = [neutral_planet_check, spread_action]
     
     #offensive_plan, spread_sequence
-    root.child_nodes = [cheese_plan, enemy_overspreading_plan, spread_sequence]
+    root.child_nodes = [cheese_plan, enemy_overspreading_plan, spread_sequence, attack.copy()]
     
     logging.info('\n' + root.tree_to_string())
     return root
