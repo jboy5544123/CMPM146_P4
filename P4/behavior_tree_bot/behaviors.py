@@ -189,9 +189,15 @@ def find_minimum_fleet_size(planet, state):
 def find_available_ships(state, planet):
 
     available_ships = 0
-    available_ships = (planet.num_ships) - find_minimum_fleet_size(planet, state)
+    if(find_minimum_fleet_size(planet, state)>0):
+        available_ships = (planet.num_ships) - find_minimum_fleet_size(planet, state)
+    elif(find_minimum_fleet_size(planet, state) > planet.num_ships):
+        available_ships = 0
+    else:
+        available_ships = (planet.num_ships)-1
 
     return available_ships
+    
 
 
 #Defending Strategy:
