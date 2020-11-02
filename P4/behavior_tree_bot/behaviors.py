@@ -103,8 +103,9 @@ def over_spreading(state):
         for neut_planet in state.neutral_planets():
             for enemy_fleet in state.enemy_fleets():
                 if (enemy_fleet.destination_planet == neut_planet.ID and state.distance(enemy_fleet.source_planet, neut_planet.ID) <= state.distance(my_planet.ID, neut_planet.ID)):
-                    if (find_available_ships(state,sending_planet) > 0):
-                        issue_order(state, my_planet.ID, neut_planet.ID, find_available_ships(state, my_planet))
+                    future = (enemy_fleet.num_ships - neut_planet.num_ships) + ((state.distance(my_planet.ID, neut_planet.ID)-(enemy_fleet.turns_remaining))*neut_planet.growth_rate)
+                    if (find_available_ships(state, my_planet) > future):
+                        issue_order(state, my_planet.ID, neut_planet.ID, future+1)
 
 
     return False
