@@ -31,10 +31,16 @@ def setup_behavior_tree():
     a = Action(cheese)
     cheese_plan.child_nodes = [cheese_check, a]
 
-    offensive_plan = Sequence(name='Offensive Strategy')
-    largest_fleet_check = Check(have_largest_fleet)
-    attack = Action(attack_weakest_enemy_planet)
-    offensive_plan.child_nodes = [largest_fleet_check, attack]
+    enemy_overspreading_plan = Sequence(name="Enemy Overspreading Strategy")
+    over_spread = Check(check_enemy_forces)
+    reaction = Action(over_spreading)
+    enemy_overspreading_plan.child_nodes = [over_spread, reaction]
+
+
+    #offensive_plan = Sequence(name='Offensive Strategy')
+    #largest_fleet_check = Check(have_largest_fleet)
+    #attack = Action(attack_weakest_enemy_planet)
+    #offensive_plan.child_nodes = [largest_fleet_check, attack]
 
     spread_sequence = Sequence(name='Spread Strategy')
     neutral_planet_check = Check(if_neutral_planet_available)
@@ -42,7 +48,7 @@ def setup_behavior_tree():
     spread_sequence.child_nodes = [neutral_planet_check, spread_action]
 
     #offensive_plan, spread_sequence
-    root.child_nodes = [cheese_plan, offensive_plan, spread_sequence, attack.copy()]
+    root.child_nodes = [cheese_plan, enemy_overspreading_plan, spread_sequence, attack.copy()]
 
     logging.info('\n' + root.tree_to_string())
     return root
