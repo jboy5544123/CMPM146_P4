@@ -12,6 +12,7 @@ def have_largest_fleet(state):
              + sum(fleet.num_ships for fleet in state.enemy_fleets())
 
 # cheese check
+
 def check_cheese(state):
     
     # checking if the enemy doesn't have any more planets
@@ -24,14 +25,15 @@ def check_cheese(state):
     
     for enemy_planet in state.enemy_planets():
         
-        my_strongest_planet = max(state.my_planets(), key=lambda t: t.num_ships, default=None)
+        #my_strongest_planet = max(state.my_planets(), key=lambda t: t.num_ships, default=None)
+        for my_planet in state.my_planets():
+
+            # just splitting up the if statement
+            first = enemy_planet.num_ships + state.distance(enemy_planet.ID, my_planet.ID)*enemy_planet.growth_rate
+            second = (my_planet.num_ships)-1
         
-        # just splitting up the if statement
-        first = enemy_planet.num_ships + state.distance(enemy_planet.ID, my_strongest_planet.ID)*enemy_planet.growth_rate
-        second = (my_strongest_planet.num_ships)-1
-        
-        if(first < second):
-            return True
+            if(first < second):
+                return True
 
     return False
 
@@ -109,28 +111,27 @@ def check_planet_size(state):
 # away from destination planet and min planet.num_ships > fleet strength-planet ships
 # return boolean
 def check_enemy_forces(state):
-    
+
     own = state.my_planets()
     other = state.neutral_planets()
-    
+
     #print('checking enemy fleets')
     for enemy_fleet in state.enemy_fleets():
-        
-        enemy_dist = enemy_fleet.total_trip_length
+
+        enemy_dist = enemy_fleet.turns_remaining
         enemy_dest = enemy_fleet.destination_planet
-        
-    
-        '''
-        for my_planet in state.my_planets():
-            
-            our_dist = state.distance(my_planet.ID, dest.ID)
-            our_ships = find_available_ships(state, my_planet)
-            enemy_ships = enemy_fleet.num_ships - dest.num_ships
-            
-            if(our_dist == enemy_dist and our_ships > enemy_ships):
-                return True
-        '''
-    return True
+        for neutral in state.neutral_planets():
+            if(enemy_dest == neutral.ID):
+                for my_planet in state.my_planets():
+
+                    our_dist = state.distance(my_planet.ID, enemy_dest)
+                    our_ships = find_available_ships(state, my_planet)
+                    enemy_ships = enemy_fleet.num_ships - neutral.num_ships
+
+                    if(our_dist >= enemy_dist and our_ships > enemy_ships):
+                        return True
+
+    return False
 
 #if we are winning or losing
 # if we have less planets than the enemy, return 0; otherwise, return 1
@@ -314,6 +315,8 @@ def find_enemy_weakest_planet(state):
 
 def find_minimum_fleet_size(planet, state):
     min_fleet = 0
+    if(len(state.enemy_planets()) == 0):
+        return min_fleet
     enemy_strongest_planet = find_enemy_strongest_planet(state)
     my_strongest_planet = find_my_strongest_planet(state)
     min_fleet = ((enemy_strongest_planet.num_ships)-1) - (state.distance(planet.ID,enemy_strongest_planet.ID)*planet.growth_rate)
@@ -322,7 +325,13 @@ def find_minimum_fleet_size(planet, state):
 
 def find_available_ships(state, planet):
     available_ships = 0
-    available_ships = (planet.num_ships) - find_minimum_fleet_size(planet, state)
+    if(find_minimum_fleet_size(planet, state)>0):
+        available_ships = (planet.num_ships) - find_minimum_fleet_size(planet, state)
+    elif(find_minimum_fleet_size(planet, state) > planet.num_ships):
+        available_ships = 0
+    else:
+        available_ships = (planet.num_ships)-1
 
     return available_ships
+
 
