@@ -4,7 +4,7 @@ sys.path.insert(0, '../')
 from planet_wars import issue_order
 
 
-def attack_weakest_enemy_planet(state): 
+def attack_weakest_enemy_planet(state):
     # (1) If we currently have a fleet in flight, abort plan.
     if len(state.my_fleets()) >= 1:
         return False
@@ -49,10 +49,10 @@ def cheese(state):
 
     #sending_planet = find_my_strongest_planet(state)
     #enemy_planet = find_enemy_weakest_planet(state)
-    
+
     #sending_planet = max(state.my_planets(), key=lambda t: t.num_ships, default=None)
     #enemy_planet = min(state.enemy_planets(), key=lambda t: t.num_ships, default=None)
-    
+
     #check = find_available_ships(state, sending_planet)
     for enemy_planet in state.enemy_planets():
         for my_planet in state.my_planets():
@@ -97,22 +97,18 @@ def over_spreading(state):
     #sending_planet = state.my_planets()[0]
 
     #maybe implement something to find the best planet to use
-    for enemy_fleet in state.enemy_fleets():
+    for sending_planet in state.my_planets():
         for neut_planet in state.neutral_planets():
-            for sending_planet in state.my_planets():
-                fleets_in_progress = 0
+            for enemy_fleet in state.enemy_fleets():
                 if(enemy_fleet.destination_planet == neut_planet.ID and enemy_fleet.turns_remaining <= state.distance(sending_planet.ID, neut_planet.ID)):
-                    for my_fleet in state.my_fleets():
-                        if(my_fleet.destination_planet == neut_planet.ID):
-                            fleets_in_progress = fleets_in_progress + my_fleet.num_ships
-                    if(find_available_ships(state, sending_planet) > (enemy_fleet.num_ships) + 2 - neut_planet.num_ships and fleets_in_progress < enemy_fleet.num_ships + 2 - neut_planet.num_ships):
+                    if(find_available_ships(state, sending_planet) > (enemy_fleet.num_ships) + 2 - neut_planet.num_ships):
                         return issue_order(state, sending_planet.ID, neut_planet.ID, enemy_fleet.num_ships + 2 - neut_planet.num_ships)
 
     return False
 
     #taking a neutral planet that is reasonably close to us in order of least cost while maintaining out original fleet count
     #to a reasonable degree
-    
+
 def spread(state):
     #(1) assign weights to distance to planet, cost, and growth weight
     distance_weight = 20
@@ -160,18 +156,16 @@ def find_enemy_strongest_planet(state):
 
     return enemy_strongest_planet
 
-'''
+
 def find_my_weakest_planet(state):
     my_weakest_planet = state.my_planets()[0]
-    for neut_planet in state.neutral_planets():
-            for enemy_fleet in state.enemy_fleets():
 
     for planet in state.my_planets():
         if(my_weakest_planet.num_ships >= planet.num_ships):
             my_weakest_planet = planet
 
     return my_weakest_planet
-'''
+
 
 def find_enemy_weakest_planet(state):
     enemy_weakest_planet = state.enemy_planets()[0]
@@ -193,7 +187,7 @@ def find_minimum_fleet_size(planet, state):
     return min_fleet
 
 def find_available_ships(state, planet):
-    
+
     available_ships = 0
     if(find_minimum_fleet_size(planet, state)>0):
         available_ships = (planet.num_ships) - find_minimum_fleet_size(planet, state)
@@ -218,4 +212,3 @@ def find_available_ships(state, planet):
     #if we are losing abandon the planet unless its our last planet
 
     #
-
