@@ -102,46 +102,35 @@ def over_spreading(state):
 
     #taking a neutral planet that is reasonably close to us in order of least cost while maintaining out original fleet count
     #to a reasonable degree
-    
+
 def spread(state):
     #(1) assign weights to distance to planet, cost, and growth weight
-    distance_weight = 1
-    cost_weight = 1
-    growth_weight = 1
-
+    distance_weight = 20
+    cost_weight = 100
+    #growth_weight = 5
+    if(len(state.my_planets()) == 0):
+        return False
 
     #(2) find the neutral planet that is most efficient to claim
-    value = 1000000
+    value = -1
 
-    planet_to_take = (state.neutral_planets())[0]
-
+    planet_to_take = None
     for planet in state.neutral_planets():
-        planet_value = planet.num_ships*cost_weight + planet.growth_rate*growth_weight + state.distance(state.my_planets[0], planet)*distance_weight
+        sent_fleets = 0
+        planet_value = 0 + (planet.num_ships*cost_weight) + state.distance(find_my_strongest_planet(state).ID, planet.ID)*distance_weight
+        for my_planets in state.my_planets():
+            for my_fleets in state.my_fleets():
+                if(my_fleets.destination_planet == planet.ID):
+                    sent_fleets = sent_fleets + my_fleets.num_ships
 
-        if(planet_value <= value):
-            value = planet_value
-            planet_to_take = planet
+            if(planet_value <= value and planet.num_ships > sent_fleets):
+                value = planet_value
+                planet_to_take = planet
 
-    #(3) check the enemy fleet size to see if you can claim safely
-    enemy_ships_available = 0
-    my_ships_available = 0
-    my_strongest_planet = find_my_strongest_planet(state)
-    enemy_strongest_planet = find_enemy_strongest_planet(state)
-    for planets in state.my_planets():
-        my_ships_available += planets.num_ships
-        #if(my_strongest_planet.num_ships <= planet.num_ships):
-        #    my_strongest_planet = planet
+            if(find_available_ships(state, my_planets) > 0 and planet_to_take is not None):
+                return issue_order(state, my_planets.ID, planet_to_take.ID, find_available_ships(state, my_planets))
 
-    for planets in state.enemy_planets():
-        enemy_ships_available += planets.num_ships
-        #if(enemy_strongest_planet.num_ships <= planet.num_ships):
-        #    enemy_strongest_planet = planet
-
-
-    if(my_strongest_planet.num_ships>=(enemy_ships_available/(len(state.enemy_planets())+1)) and my_strongest_planet.num_ships + (state.distance(my_strongest_planet.ID,enemy_strongest_planet.ID)*my_strongest_planet.growth_rate) >= enemy_strongest_planet.num_ships*0.5):
-        issue_order(state, my_strongest_planet.ID, planet_to_take.ID, find_available_ships(my_strongest_planet))
-
-
+    return False
 
 def find_my_strongest_planet(state):
     my_strongest_planet = state.my_planets()[0]
