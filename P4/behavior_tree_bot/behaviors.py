@@ -50,17 +50,26 @@ def cheese(state):
     #sending_planet = find_my_strongest_planet(state)
     #enemy_planet = find_enemy_weakest_planet(state)
 
-    sending_planet = max(state.my_planets(), key=lambda t: t.num_ships, default=None)
-    enemy_planet = min(state.enemy_planets(), key=lambda t: t.num_ships, default=None)
+    #sending_planet = max(state.my_planets(), key=lambda t: t.num_ships, default=None)
+    #enemy_planet = min(state.enemy_planets(), key=lambda t: t.num_ships, default=None)
 
-    check = find_available_ships(state, sending_planet)
+    #check = find_available_ships(state, sending_planet)
+    for enemy_planet in state.enemy_planets():
+        for my_planet in state.my_planets():
+            fleets_in_progress = 0
+            for my_fleets in state.my_fleets():
+                if(my_fleets.destination_planet == enemy_planet.ID):
+                    fleets_in_progress = fleets_in_progress + my_fleets.num_ships
 
+
+            future_forces = enemy_planet.num_ships + state.distance(enemy_planet.ID, my_planet.ID)*enemy_planet.growth_rate
+            if(future_forces < find_available_ships(state, my_planet) and fleets_in_progress < future_forces):
+                if(find_available_ships(state, my_planet) > enemy_planet.num_ships):
+                    issue_order(state, my_planet.ID, enemy_planet.ID, future_forces+1)
     #return issue_order(state, sending_planet.ID, enemy_planet.ID, find_available_ships(state, sending_planet))
 
-    if(check > 0):
-        return issue_order(state, sending_planet.ID, enemy_planet.ID, check)
-    else:
-        return False
+
+    return False
 
     #Suppression - continually send ships at the rate they are being made at a certain enemy planet after
 
