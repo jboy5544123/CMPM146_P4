@@ -93,11 +93,12 @@ def over_spreading(state):
 
     for neut_planet in state.neutral_planets():
         for enemy_fleet in state.enemy_fleets():
-            if (enemy_fleet.destination_planet == neut_planet and state.distance(enemy_fleet.source_planet, neut_planet) <= state.distance(sending_planet, neut_planet)):
-                neutral_planet = neut_planet
+            if (enemy_fleet.destination_planet == neut_planet.ID and state.distance(enemy_fleet.source_planet, neut_planet.ID) <= state.distance(sending_planet.ID, neut_planet.ID)):
+                if (find_available_ships(state,sending_planet) > 0):
+                    return issue_order(state, sending_planet.ID, neut_planet.ID, find_available_ships(state, sending_planet))
 
 
-    issue_order(state, sending_planet.ID, neutral_planet.ID, find_available_ships(sending_planet))
+    return False
 
 
     #taking a neutral planet that is reasonably close to us in order of least cost while maintaining out original fleet count
@@ -170,6 +171,8 @@ def find_enemy_weakest_planet(state):
 
 def find_minimum_fleet_size(planet, state):
     min_fleet = 0
+    if(len(state.enemy_planets()) == 0):
+        return min_fleet
     enemy_strongest_planet = max(state.enemy_planets(), key=lambda t: t.num_ships, default=None)
     #my_strongest_planet = max(state.my_planets(), key=lambda t: t.num_ships, default=None)
     min_fleet = ((enemy_strongest_planet.num_ships)-1) - (state.distance(planet.ID,enemy_strongest_planet.ID)*planet.growth_rate)
