@@ -167,13 +167,14 @@ DEBUG:root:Executing:Sequence: Cheese Plan
 DEBUG:root:Executing:Check: check_cheese
 DEBUG:root:Result: Check: check_cheese -> Success
 DEBUG:root:Executing:Action: cheese
-DEBUG:root:Order:1 9 27.0
+DEBUG:root:Order:1 9 2.0
 DEBUG:root:Result: Action: cheese -> Failure
 DEBUG:root:Result: Sequence: Cheese Plan -> Failure
 DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
 DEBUG:root:Executing:Check: check_enemy_forces
 DEBUG:root:Result: Check: check_enemy_forces -> Success
 DEBUG:root:Executing:Action: over_spreading
+DEBUG:root:Order:1 17 2.0
 DEBUG:root:Result: Action: over_spreading -> Failure
 DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
 DEBUG:root:Executing:Sequence: Spread Strategy
@@ -188,12 +189,15 @@ DEBUG:root:Finish turn
 DEBUG:root:Executing:Selector: High Level Ordering of Strategies
 DEBUG:root:Executing:Sequence: Cheese Plan
 DEBUG:root:Executing:Check: check_cheese
-DEBUG:root:Result: Check: check_cheese -> Failure
+DEBUG:root:Result: Check: check_cheese -> Success
+DEBUG:root:Executing:Action: cheese
+DEBUG:root:Result: Action: cheese -> Failure
 DEBUG:root:Result: Sequence: Cheese Plan -> Failure
 DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
 DEBUG:root:Executing:Check: check_enemy_forces
 DEBUG:root:Result: Check: check_enemy_forces -> Success
 DEBUG:root:Executing:Action: over_spreading
+DEBUG:root:Order:1 17 2.0
 DEBUG:root:Result: Action: over_spreading -> Failure
 DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
 DEBUG:root:Executing:Sequence: Spread Strategy
@@ -208,7 +212,11 @@ DEBUG:root:Finish turn
 DEBUG:root:Executing:Selector: High Level Ordering of Strategies
 DEBUG:root:Executing:Sequence: Cheese Plan
 DEBUG:root:Executing:Check: check_cheese
-DEBUG:root:Result: Check: check_cheese -> Failure
+DEBUG:root:Result: Check: check_cheese -> Success
+DEBUG:root:Executing:Action: cheese
+DEBUG:root:Order:1 9 2.0
+DEBUG:root:Order:1 17 2.0
+DEBUG:root:Result: Action: cheese -> Failure
 DEBUG:root:Result: Sequence: Cheese Plan -> Failure
 DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
 DEBUG:root:Executing:Check: check_enemy_forces
@@ -230,6 +238,7 @@ DEBUG:root:Executing:Sequence: Cheese Plan
 DEBUG:root:Executing:Check: check_cheese
 DEBUG:root:Result: Check: check_cheese -> Success
 DEBUG:root:Executing:Action: cheese
+DEBUG:root:Order:1 17 2.0
 DEBUG:root:Result: Action: cheese -> Failure
 DEBUG:root:Result: Sequence: Cheese Plan -> Failure
 DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
@@ -251,90 +260,9 @@ DEBUG:root:Finish turn
 DEBUG:root:Executing:Selector: High Level Ordering of Strategies
 DEBUG:root:Executing:Sequence: Cheese Plan
 DEBUG:root:Executing:Check: check_cheese
-DEBUG:root:Result: Check: check_cheese -> Failure
-DEBUG:root:Result: Sequence: Cheese Plan -> Failure
-DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
-DEBUG:root:Executing:Check: check_enemy_forces
-DEBUG:root:Result: Check: check_enemy_forces -> Success
-DEBUG:root:Executing:Action: over_spreading
-DEBUG:root:Result: Action: over_spreading -> Failure
-DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
-DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: High Level Ordering of Strategies
-DEBUG:root:Executing:Sequence: Cheese Plan
-DEBUG:root:Executing:Check: check_cheese
-DEBUG:root:Result: Check: check_cheese -> Failure
-DEBUG:root:Result: Sequence: Cheese Plan -> Failure
-DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
-DEBUG:root:Executing:Check: check_enemy_forces
-DEBUG:root:Result: Check: check_enemy_forces -> Success
-DEBUG:root:Executing:Action: over_spreading
-DEBUG:root:Order:1 5 2.0
-DEBUG:root:Result: Action: over_spreading -> Failure
-DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
-DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: High Level Ordering of Strategies
-DEBUG:root:Executing:Sequence: Cheese Plan
-DEBUG:root:Executing:Check: check_cheese
-DEBUG:root:Result: Check: check_cheese -> Failure
-DEBUG:root:Result: Sequence: Cheese Plan -> Failure
-DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
-DEBUG:root:Executing:Check: check_enemy_forces
-DEBUG:root:Result: Check: check_enemy_forces -> Success
-DEBUG:root:Executing:Action: over_spreading
-DEBUG:root:Result: Action: over_spreading -> Failure
-DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
-DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: High Level Ordering of Strategies
-DEBUG:root:Executing:Sequence: Cheese Plan
-DEBUG:root:Executing:Check: check_cheese
-DEBUG:root:Result: Check: check_cheese -> Failure
-DEBUG:root:Result: Sequence: Cheese Plan -> Failure
-DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
-DEBUG:root:Executing:Check: check_enemy_forces
-DEBUG:root:Result: Check: check_enemy_forces -> Success
-DEBUG:root:Executing:Action: over_spreading
-DEBUG:root:Order:1 5 2.0
-DEBUG:root:Result: Action: over_spreading -> Failure
-DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
-DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: High Level Ordering of Strategies
-DEBUG:root:Executing:Sequence: Cheese Plan
-DEBUG:root:Executing:Check: check_cheese
 DEBUG:root:Result: Check: check_cheese -> Success
 DEBUG:root:Executing:Action: cheese
+DEBUG:root:Order:1 9 2.0
 DEBUG:root:Result: Action: cheese -> Failure
 DEBUG:root:Result: Sequence: Cheese Plan -> Failure
 DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
@@ -380,6 +308,7 @@ DEBUG:root:Executing:Sequence: Cheese Plan
 DEBUG:root:Executing:Check: check_cheese
 DEBUG:root:Result: Check: check_cheese -> Success
 DEBUG:root:Executing:Action: cheese
+DEBUG:root:Order:1 9 2.0
 DEBUG:root:Result: Action: cheese -> Failure
 DEBUG:root:Result: Sequence: Cheese Plan -> Failure
 DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
@@ -425,7 +354,7 @@ DEBUG:root:Executing:Sequence: Cheese Plan
 DEBUG:root:Executing:Check: check_cheese
 DEBUG:root:Result: Check: check_cheese -> Success
 DEBUG:root:Executing:Action: cheese
-DEBUG:root:Order:11 17 40.0
+DEBUG:root:Order:1 9 2.0
 DEBUG:root:Result: Action: cheese -> Failure
 DEBUG:root:Result: Sequence: Cheese Plan -> Failure
 DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
@@ -448,7 +377,100 @@ DEBUG:root:Executing:Sequence: Cheese Plan
 DEBUG:root:Executing:Check: check_cheese
 DEBUG:root:Result: Check: check_cheese -> Success
 DEBUG:root:Executing:Action: cheese
-DEBUG:root:Order:1 5 25.0
+DEBUG:root:Order:1 17 12.0
+DEBUG:root:Result: Action: cheese -> Failure
+DEBUG:root:Result: Sequence: Cheese Plan -> Failure
+DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
+DEBUG:root:Executing:Check: check_enemy_forces
+DEBUG:root:Result: Check: check_enemy_forces -> Success
+DEBUG:root:Executing:Action: over_spreading
+DEBUG:root:Order:1 5 2.0
+DEBUG:root:Result: Action: over_spreading -> Failure
+DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread
+DEBUG:root:Result: Action: spread -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Cheese Plan
+DEBUG:root:Executing:Check: check_cheese
+DEBUG:root:Result: Check: check_cheese -> Success
+DEBUG:root:Executing:Action: cheese
+DEBUG:root:Order:1 9 2.0
+DEBUG:root:Result: Action: cheese -> Failure
+DEBUG:root:Result: Sequence: Cheese Plan -> Failure
+DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
+DEBUG:root:Executing:Check: check_enemy_forces
+DEBUG:root:Result: Check: check_enemy_forces -> Success
+DEBUG:root:Executing:Action: over_spreading
+DEBUG:root:Result: Action: over_spreading -> Failure
+DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread
+DEBUG:root:Result: Action: spread -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Cheese Plan
+DEBUG:root:Executing:Check: check_cheese
+DEBUG:root:Result: Check: check_cheese -> Success
+DEBUG:root:Executing:Action: cheese
+DEBUG:root:Result: Action: cheese -> Failure
+DEBUG:root:Result: Sequence: Cheese Plan -> Failure
+DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
+DEBUG:root:Executing:Check: check_enemy_forces
+DEBUG:root:Result: Check: check_enemy_forces -> Success
+DEBUG:root:Executing:Action: over_spreading
+DEBUG:root:Order:1 5 2.0
+DEBUG:root:Result: Action: over_spreading -> Failure
+DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread
+DEBUG:root:Result: Action: spread -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Cheese Plan
+DEBUG:root:Executing:Check: check_cheese
+DEBUG:root:Result: Check: check_cheese -> Success
+DEBUG:root:Executing:Action: cheese
+DEBUG:root:Order:1 9 2.0
+DEBUG:root:Result: Action: cheese -> Failure
+DEBUG:root:Result: Sequence: Cheese Plan -> Failure
+DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
+DEBUG:root:Executing:Check: check_enemy_forces
+DEBUG:root:Result: Check: check_enemy_forces -> Success
+DEBUG:root:Executing:Action: over_spreading
+DEBUG:root:Result: Action: over_spreading -> Failure
+DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread
+DEBUG:root:Result: Action: spread -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Cheese Plan
+DEBUG:root:Executing:Check: check_cheese
+DEBUG:root:Result: Check: check_cheese -> Success
+DEBUG:root:Executing:Action: cheese
+DEBUG:root:Order:1 5 2.0
 DEBUG:root:Order:1 18 16.0
 DEBUG:root:Result: Action: cheese -> Failure
 DEBUG:root:Result: Sequence: Cheese Plan -> Failure
@@ -472,7 +494,7 @@ DEBUG:root:Executing:Sequence: Cheese Plan
 DEBUG:root:Executing:Check: check_cheese
 DEBUG:root:Result: Check: check_cheese -> Success
 DEBUG:root:Executing:Action: cheese
-DEBUG:root:Order:1 18 18.0
+DEBUG:root:Order:1 18 2.0
 DEBUG:root:Result: Action: cheese -> Failure
 DEBUG:root:Result: Sequence: Cheese Plan -> Failure
 DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
@@ -495,6 +517,8 @@ DEBUG:root:Executing:Sequence: Cheese Plan
 DEBUG:root:Executing:Check: check_cheese
 DEBUG:root:Result: Check: check_cheese -> Success
 DEBUG:root:Executing:Action: cheese
+DEBUG:root:Order:1 5 2.0
+DEBUG:root:Order:1 18 2.0
 DEBUG:root:Result: Action: cheese -> Failure
 DEBUG:root:Result: Sequence: Cheese Plan -> Failure
 DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
@@ -517,6 +541,7 @@ DEBUG:root:Executing:Sequence: Cheese Plan
 DEBUG:root:Executing:Check: check_cheese
 DEBUG:root:Result: Check: check_cheese -> Success
 DEBUG:root:Executing:Action: cheese
+DEBUG:root:Order:1 18 2.0
 DEBUG:root:Result: Action: cheese -> Failure
 DEBUG:root:Result: Sequence: Cheese Plan -> Failure
 DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
@@ -539,6 +564,8 @@ DEBUG:root:Executing:Sequence: Cheese Plan
 DEBUG:root:Executing:Check: check_cheese
 DEBUG:root:Result: Check: check_cheese -> Success
 DEBUG:root:Executing:Action: cheese
+DEBUG:root:Order:1 5 2.0
+DEBUG:root:Order:1 18 2.0
 DEBUG:root:Result: Action: cheese -> Failure
 DEBUG:root:Result: Sequence: Cheese Plan -> Failure
 DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
@@ -561,6 +588,7 @@ DEBUG:root:Executing:Sequence: Cheese Plan
 DEBUG:root:Executing:Check: check_cheese
 DEBUG:root:Result: Check: check_cheese -> Success
 DEBUG:root:Executing:Action: cheese
+DEBUG:root:Order:1 18 2.0
 DEBUG:root:Result: Action: cheese -> Failure
 DEBUG:root:Result: Sequence: Cheese Plan -> Failure
 DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
@@ -583,6 +611,9 @@ DEBUG:root:Executing:Sequence: Cheese Plan
 DEBUG:root:Executing:Check: check_cheese
 DEBUG:root:Result: Check: check_cheese -> Success
 DEBUG:root:Executing:Action: cheese
+DEBUG:root:Order:11 2 65.0
+DEBUG:root:Order:1 5 2.0
+DEBUG:root:Order:1 18 2.0
 DEBUG:root:Result: Action: cheese -> Failure
 DEBUG:root:Result: Sequence: Cheese Plan -> Failure
 DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
@@ -629,6 +660,7 @@ DEBUG:root:Executing:Sequence: Cheese Plan
 DEBUG:root:Executing:Check: check_cheese
 DEBUG:root:Result: Check: check_cheese -> Success
 DEBUG:root:Executing:Action: cheese
+DEBUG:root:Order:1 5 2.0
 DEBUG:root:Result: Action: cheese -> Failure
 DEBUG:root:Result: Sequence: Cheese Plan -> Failure
 DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
@@ -675,6 +707,7 @@ DEBUG:root:Executing:Sequence: Cheese Plan
 DEBUG:root:Executing:Check: check_cheese
 DEBUG:root:Result: Check: check_cheese -> Success
 DEBUG:root:Executing:Action: cheese
+DEBUG:root:Order:1 5 2.0
 DEBUG:root:Result: Action: cheese -> Failure
 DEBUG:root:Result: Sequence: Cheese Plan -> Failure
 DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
@@ -721,6 +754,7 @@ DEBUG:root:Executing:Sequence: Cheese Plan
 DEBUG:root:Executing:Check: check_cheese
 DEBUG:root:Result: Check: check_cheese -> Success
 DEBUG:root:Executing:Action: cheese
+DEBUG:root:Order:1 5 2.0
 DEBUG:root:Result: Action: cheese -> Failure
 DEBUG:root:Result: Sequence: Cheese Plan -> Failure
 DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
@@ -784,7 +818,10 @@ DEBUG:root:Finish turn
 DEBUG:root:Executing:Selector: High Level Ordering of Strategies
 DEBUG:root:Executing:Sequence: Cheese Plan
 DEBUG:root:Executing:Check: check_cheese
-DEBUG:root:Result: Check: check_cheese -> Failure
+DEBUG:root:Result: Check: check_cheese -> Success
+DEBUG:root:Executing:Action: cheese
+DEBUG:root:Order:11 12 52.0
+DEBUG:root:Result: Action: cheese -> Failure
 DEBUG:root:Result: Sequence: Cheese Plan -> Failure
 DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
 DEBUG:root:Executing:Check: check_enemy_forces
@@ -807,7 +844,7 @@ DEBUG:root:Executing:Sequence: Cheese Plan
 DEBUG:root:Executing:Check: check_cheese
 DEBUG:root:Result: Check: check_cheese -> Success
 DEBUG:root:Executing:Action: cheese
-DEBUG:root:Order:1 0 35.0
+DEBUG:root:Order:1 0 3.0
 DEBUG:root:Result: Action: cheese -> Failure
 DEBUG:root:Result: Sequence: Cheese Plan -> Failure
 DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
@@ -831,300 +868,7 @@ DEBUG:root:Executing:Check: check_cheese
 DEBUG:root:Result: Check: check_cheese -> Success
 DEBUG:root:Executing:Action: cheese
 DEBUG:root:Order:1 6 13.0
-DEBUG:root:Order:11 6 19.0
-DEBUG:root:Result: Action: cheese -> Failure
-DEBUG:root:Result: Sequence: Cheese Plan -> Failure
-DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
-DEBUG:root:Executing:Check: check_enemy_forces
-DEBUG:root:Result: Check: check_enemy_forces -> Failure
-DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
-DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: High Level Ordering of Strategies
-DEBUG:root:Executing:Sequence: Cheese Plan
-DEBUG:root:Executing:Check: check_cheese
-DEBUG:root:Result: Check: check_cheese -> Success
-DEBUG:root:Executing:Action: cheese
-DEBUG:root:Order:11 12 42.0
-DEBUG:root:Result: Action: cheese -> Failure
-DEBUG:root:Result: Sequence: Cheese Plan -> Failure
-DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
-DEBUG:root:Executing:Check: check_enemy_forces
-DEBUG:root:Result: Check: check_enemy_forces -> Success
-DEBUG:root:Executing:Action: over_spreading
-DEBUG:root:Order:17 21 14.0
-DEBUG:root:Result: Action: over_spreading -> Failure
-DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
-DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: High Level Ordering of Strategies
-DEBUG:root:Executing:Sequence: Cheese Plan
-DEBUG:root:Executing:Check: check_cheese
-DEBUG:root:Result: Check: check_cheese -> Success
-DEBUG:root:Executing:Action: cheese
-DEBUG:root:Result: Action: cheese -> Failure
-DEBUG:root:Result: Sequence: Cheese Plan -> Failure
-DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
-DEBUG:root:Executing:Check: check_enemy_forces
-DEBUG:root:Result: Check: check_enemy_forces -> Success
-DEBUG:root:Executing:Action: over_spreading
-DEBUG:root:Order:17 21 3.0
-DEBUG:root:Result: Action: over_spreading -> Failure
-DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
-DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: High Level Ordering of Strategies
-DEBUG:root:Executing:Sequence: Cheese Plan
-DEBUG:root:Executing:Check: check_cheese
-DEBUG:root:Result: Check: check_cheese -> Success
-DEBUG:root:Executing:Action: cheese
-DEBUG:root:Result: Action: cheese -> Failure
-DEBUG:root:Result: Sequence: Cheese Plan -> Failure
-DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
-DEBUG:root:Executing:Check: check_enemy_forces
-DEBUG:root:Result: Check: check_enemy_forces -> Success
-DEBUG:root:Executing:Action: over_spreading
-DEBUG:root:Result: Action: over_spreading -> Failure
-DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
-DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: High Level Ordering of Strategies
-DEBUG:root:Executing:Sequence: Cheese Plan
-DEBUG:root:Executing:Check: check_cheese
-DEBUG:root:Result: Check: check_cheese -> Success
-DEBUG:root:Executing:Action: cheese
-DEBUG:root:Result: Action: cheese -> Failure
-DEBUG:root:Result: Sequence: Cheese Plan -> Failure
-DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
-DEBUG:root:Executing:Check: check_enemy_forces
-DEBUG:root:Result: Check: check_enemy_forces -> Success
-DEBUG:root:Executing:Action: over_spreading
-DEBUG:root:Result: Action: over_spreading -> Failure
-DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
-DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: High Level Ordering of Strategies
-DEBUG:root:Executing:Sequence: Cheese Plan
-DEBUG:root:Executing:Check: check_cheese
-DEBUG:root:Result: Check: check_cheese -> Success
-DEBUG:root:Executing:Action: cheese
-DEBUG:root:Result: Action: cheese -> Failure
-DEBUG:root:Result: Sequence: Cheese Plan -> Failure
-DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
-DEBUG:root:Executing:Check: check_enemy_forces
-DEBUG:root:Result: Check: check_enemy_forces -> Success
-DEBUG:root:Executing:Action: over_spreading
-DEBUG:root:Result: Action: over_spreading -> Failure
-DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
-DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: High Level Ordering of Strategies
-DEBUG:root:Executing:Sequence: Cheese Plan
-DEBUG:root:Executing:Check: check_cheese
-DEBUG:root:Result: Check: check_cheese -> Success
-DEBUG:root:Executing:Action: cheese
-DEBUG:root:Result: Action: cheese -> Failure
-DEBUG:root:Result: Sequence: Cheese Plan -> Failure
-DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
-DEBUG:root:Executing:Check: check_enemy_forces
-DEBUG:root:Result: Check: check_enemy_forces -> Success
-DEBUG:root:Executing:Action: over_spreading
-DEBUG:root:Order:5 21 6.0
-DEBUG:root:Result: Action: over_spreading -> Failure
-DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
-DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: High Level Ordering of Strategies
-DEBUG:root:Executing:Sequence: Cheese Plan
-DEBUG:root:Executing:Check: check_cheese
-DEBUG:root:Result: Check: check_cheese -> Success
-DEBUG:root:Executing:Action: cheese
-DEBUG:root:Result: Action: cheese -> Failure
-DEBUG:root:Result: Sequence: Cheese Plan -> Failure
-DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
-DEBUG:root:Executing:Check: check_enemy_forces
-DEBUG:root:Result: Check: check_enemy_forces -> Success
-DEBUG:root:Executing:Action: over_spreading
-DEBUG:root:Result: Action: over_spreading -> Failure
-DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
-DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: High Level Ordering of Strategies
-DEBUG:root:Executing:Sequence: Cheese Plan
-DEBUG:root:Executing:Check: check_cheese
-DEBUG:root:Result: Check: check_cheese -> Success
-DEBUG:root:Executing:Action: cheese
-DEBUG:root:Result: Action: cheese -> Failure
-DEBUG:root:Result: Sequence: Cheese Plan -> Failure
-DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
-DEBUG:root:Executing:Check: check_enemy_forces
-DEBUG:root:Result: Check: check_enemy_forces -> Success
-DEBUG:root:Executing:Action: over_spreading
-DEBUG:root:Order:17 21 12.0
-DEBUG:root:Result: Action: over_spreading -> Failure
-DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
-DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: High Level Ordering of Strategies
-DEBUG:root:Executing:Sequence: Cheese Plan
-DEBUG:root:Executing:Check: check_cheese
-DEBUG:root:Result: Check: check_cheese -> Success
-DEBUG:root:Executing:Action: cheese
-DEBUG:root:Result: Action: cheese -> Failure
-DEBUG:root:Result: Sequence: Cheese Plan -> Failure
-DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
-DEBUG:root:Executing:Check: check_enemy_forces
-DEBUG:root:Result: Check: check_enemy_forces -> Success
-DEBUG:root:Executing:Action: over_spreading
-DEBUG:root:Result: Action: over_spreading -> Failure
-DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
-DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: High Level Ordering of Strategies
-DEBUG:root:Executing:Sequence: Cheese Plan
-DEBUG:root:Executing:Check: check_cheese
-DEBUG:root:Result: Check: check_cheese -> Success
-DEBUG:root:Executing:Action: cheese
-DEBUG:root:Order:0 2 82.0
-DEBUG:root:Result: Action: cheese -> Failure
-DEBUG:root:Result: Sequence: Cheese Plan -> Failure
-DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
-DEBUG:root:Executing:Check: check_enemy_forces
-DEBUG:root:Result: Check: check_enemy_forces -> Success
-DEBUG:root:Executing:Action: over_spreading
-DEBUG:root:Result: Action: over_spreading -> Failure
-DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
-DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: High Level Ordering of Strategies
-DEBUG:root:Executing:Sequence: Cheese Plan
-DEBUG:root:Executing:Check: check_cheese
-DEBUG:root:Result: Check: check_cheese -> Success
-DEBUG:root:Executing:Action: cheese
-DEBUG:root:Order:1 0 55.0
-DEBUG:root:Order:11 9 17.0
-DEBUG:root:Order:18 9 23.0
-DEBUG:root:Result: Action: cheese -> Failure
-DEBUG:root:Result: Sequence: Cheese Plan -> Failure
-DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
-DEBUG:root:Executing:Check: check_enemy_forces
-DEBUG:root:Result: Check: check_enemy_forces -> Success
-DEBUG:root:Executing:Action: over_spreading
-DEBUG:root:Result: Action: over_spreading -> Failure
-DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
-DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: High Level Ordering of Strategies
-DEBUG:root:Executing:Sequence: Cheese Plan
-DEBUG:root:Executing:Check: check_cheese
-DEBUG:root:Result: Check: check_cheese -> Success
-DEBUG:root:Executing:Action: cheese
-DEBUG:root:Result: Action: cheese -> Failure
-DEBUG:root:Result: Sequence: Cheese Plan -> Failure
-DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
-DEBUG:root:Executing:Check: check_enemy_forces
-DEBUG:root:Result: Check: check_enemy_forces -> Success
-DEBUG:root:Executing:Action: over_spreading
-DEBUG:root:Result: Action: over_spreading -> Failure
-DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
-DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: High Level Ordering of Strategies
-DEBUG:root:Executing:Sequence: Cheese Plan
-DEBUG:root:Executing:Check: check_cheese
-DEBUG:root:Result: Check: check_cheese -> Success
-DEBUG:root:Executing:Action: cheese
+DEBUG:root:Order:18 6 4.0
 DEBUG:root:Result: Action: cheese -> Failure
 DEBUG:root:Result: Sequence: Cheese Plan -> Failure
 DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
@@ -1165,6 +909,70 @@ DEBUG:root:Executing:Sequence: Cheese Plan
 DEBUG:root:Executing:Check: check_cheese
 DEBUG:root:Result: Check: check_cheese -> Success
 DEBUG:root:Executing:Action: cheese
+DEBUG:root:Order:11 6 4.0
+DEBUG:root:Result: Action: cheese -> Failure
+DEBUG:root:Result: Sequence: Cheese Plan -> Failure
+DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
+DEBUG:root:Executing:Check: check_enemy_forces
+DEBUG:root:Result: Check: check_enemy_forces -> Failure
+DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread
+DEBUG:root:Result: Action: spread -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Cheese Plan
+DEBUG:root:Executing:Check: check_cheese
+DEBUG:root:Result: Check: check_cheese -> Success
+DEBUG:root:Executing:Action: cheese
+DEBUG:root:Order:2 6 7.0
+DEBUG:root:Result: Action: cheese -> Failure
+DEBUG:root:Result: Sequence: Cheese Plan -> Failure
+DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
+DEBUG:root:Executing:Check: check_enemy_forces
+DEBUG:root:Result: Check: check_enemy_forces -> Failure
+DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread
+DEBUG:root:Result: Action: spread -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Cheese Plan
+DEBUG:root:Executing:Check: check_cheese
+DEBUG:root:Result: Check: check_cheese -> Success
+DEBUG:root:Executing:Action: cheese
+DEBUG:root:Order:1 17 36.0
+DEBUG:root:Result: Action: cheese -> Failure
+DEBUG:root:Result: Sequence: Cheese Plan -> Failure
+DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
+DEBUG:root:Executing:Check: check_enemy_forces
+DEBUG:root:Result: Check: check_enemy_forces -> Failure
+DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Action: spread
+DEBUG:root:Result: Action: spread -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Cheese Plan
+DEBUG:root:Executing:Check: check_cheese
+DEBUG:root:Result: Check: check_cheese -> Success
+DEBUG:root:Executing:Action: cheese
+DEBUG:root:Order:2 6 2.0
 DEBUG:root:Result: Action: cheese -> Failure
 DEBUG:root:Result: Sequence: Cheese Plan -> Failure
 DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
@@ -1205,47 +1013,8 @@ DEBUG:root:Executing:Sequence: Cheese Plan
 DEBUG:root:Executing:Check: check_cheese
 DEBUG:root:Result: Check: check_cheese -> Success
 DEBUG:root:Executing:Action: cheese
-DEBUG:root:Result: Action: cheese -> Failure
-DEBUG:root:Result: Sequence: Cheese Plan -> Failure
-DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
-DEBUG:root:Executing:Check: check_enemy_forces
-DEBUG:root:Result: Check: check_enemy_forces -> Failure
-DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
-DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: High Level Ordering of Strategies
-DEBUG:root:Executing:Sequence: Cheese Plan
-DEBUG:root:Executing:Check: check_cheese
-DEBUG:root:Result: Check: check_cheese -> Success
-DEBUG:root:Executing:Action: cheese
-DEBUG:root:Order:11 2 97.0
-DEBUG:root:Result: Action: cheese -> Failure
-DEBUG:root:Result: Sequence: Cheese Plan -> Failure
-DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
-DEBUG:root:Executing:Check: check_enemy_forces
-DEBUG:root:Result: Check: check_enemy_forces -> Failure
-DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
-DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: High Level Ordering of Strategies
-DEBUG:root:Executing:Sequence: Cheese Plan
-DEBUG:root:Executing:Check: check_cheese
-DEBUG:root:Result: Check: check_cheese -> Success
-DEBUG:root:Executing:Action: cheese
+DEBUG:root:Order:2 6 2.0
+DEBUG:root:Order:1 17 6.0
 DEBUG:root:Result: Action: cheese -> Failure
 DEBUG:root:Result: Sequence: Cheese Plan -> Failure
 DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
@@ -1286,6 +1055,8 @@ DEBUG:root:Executing:Sequence: Cheese Plan
 DEBUG:root:Executing:Check: check_cheese
 DEBUG:root:Result: Check: check_cheese -> Success
 DEBUG:root:Executing:Action: cheese
+DEBUG:root:Order:2 6 2.0
+DEBUG:root:Order:1 17 4.0
 DEBUG:root:Result: Action: cheese -> Failure
 DEBUG:root:Result: Sequence: Cheese Plan -> Failure
 DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
@@ -1306,6 +1077,7 @@ DEBUG:root:Executing:Sequence: Cheese Plan
 DEBUG:root:Executing:Check: check_cheese
 DEBUG:root:Result: Check: check_cheese -> Success
 DEBUG:root:Executing:Action: cheese
+DEBUG:root:Order:1 17 2.0
 DEBUG:root:Result: Action: cheese -> Failure
 DEBUG:root:Result: Sequence: Cheese Plan -> Failure
 DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
@@ -1326,6 +1098,7 @@ DEBUG:root:Executing:Sequence: Cheese Plan
 DEBUG:root:Executing:Check: check_cheese
 DEBUG:root:Result: Check: check_cheese -> Success
 DEBUG:root:Executing:Action: cheese
+DEBUG:root:Order:1 17 2.0
 DEBUG:root:Result: Action: cheese -> Failure
 DEBUG:root:Result: Sequence: Cheese Plan -> Failure
 DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
@@ -1346,6 +1119,7 @@ DEBUG:root:Executing:Sequence: Cheese Plan
 DEBUG:root:Executing:Check: check_cheese
 DEBUG:root:Result: Check: check_cheese -> Success
 DEBUG:root:Executing:Action: cheese
+DEBUG:root:Order:1 17 2.0
 DEBUG:root:Result: Action: cheese -> Failure
 DEBUG:root:Result: Sequence: Cheese Plan -> Failure
 DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
@@ -1366,6 +1140,7 @@ DEBUG:root:Executing:Sequence: Cheese Plan
 DEBUG:root:Executing:Check: check_cheese
 DEBUG:root:Result: Check: check_cheese -> Success
 DEBUG:root:Executing:Action: cheese
+DEBUG:root:Order:1 17 2.0
 DEBUG:root:Result: Action: cheese -> Failure
 DEBUG:root:Result: Sequence: Cheese Plan -> Failure
 DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
@@ -1384,7 +1159,10 @@ DEBUG:root:Finish turn
 DEBUG:root:Executing:Selector: High Level Ordering of Strategies
 DEBUG:root:Executing:Sequence: Cheese Plan
 DEBUG:root:Executing:Check: check_cheese
-DEBUG:root:Result: Check: check_cheese -> Failure
+DEBUG:root:Result: Check: check_cheese -> Success
+DEBUG:root:Executing:Action: cheese
+DEBUG:root:Order:1 17 2.0
+DEBUG:root:Result: Action: cheese -> Failure
 DEBUG:root:Result: Sequence: Cheese Plan -> Failure
 DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
 DEBUG:root:Executing:Check: check_enemy_forces
@@ -1402,7 +1180,10 @@ DEBUG:root:Finish turn
 DEBUG:root:Executing:Selector: High Level Ordering of Strategies
 DEBUG:root:Executing:Sequence: Cheese Plan
 DEBUG:root:Executing:Check: check_cheese
-DEBUG:root:Result: Check: check_cheese -> Failure
+DEBUG:root:Result: Check: check_cheese -> Success
+DEBUG:root:Executing:Action: cheese
+DEBUG:root:Order:1 17 2.0
+DEBUG:root:Result: Action: cheese -> Failure
 DEBUG:root:Result: Sequence: Cheese Plan -> Failure
 DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
 DEBUG:root:Executing:Check: check_enemy_forces
@@ -1420,7 +1201,10 @@ DEBUG:root:Finish turn
 DEBUG:root:Executing:Selector: High Level Ordering of Strategies
 DEBUG:root:Executing:Sequence: Cheese Plan
 DEBUG:root:Executing:Check: check_cheese
-DEBUG:root:Result: Check: check_cheese -> Failure
+DEBUG:root:Result: Check: check_cheese -> Success
+DEBUG:root:Executing:Action: cheese
+DEBUG:root:Order:1 17 2.0
+DEBUG:root:Result: Action: cheese -> Failure
 DEBUG:root:Result: Sequence: Cheese Plan -> Failure
 DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
 DEBUG:root:Executing:Check: check_enemy_forces
@@ -1438,7 +1222,10 @@ DEBUG:root:Finish turn
 DEBUG:root:Executing:Selector: High Level Ordering of Strategies
 DEBUG:root:Executing:Sequence: Cheese Plan
 DEBUG:root:Executing:Check: check_cheese
-DEBUG:root:Result: Check: check_cheese -> Failure
+DEBUG:root:Result: Check: check_cheese -> Success
+DEBUG:root:Executing:Action: cheese
+DEBUG:root:Order:1 17 2.0
+DEBUG:root:Result: Action: cheese -> Failure
 DEBUG:root:Result: Sequence: Cheese Plan -> Failure
 DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
 DEBUG:root:Executing:Check: check_enemy_forces
@@ -1456,7 +1243,10 @@ DEBUG:root:Finish turn
 DEBUG:root:Executing:Selector: High Level Ordering of Strategies
 DEBUG:root:Executing:Sequence: Cheese Plan
 DEBUG:root:Executing:Check: check_cheese
-DEBUG:root:Result: Check: check_cheese -> Failure
+DEBUG:root:Result: Check: check_cheese -> Success
+DEBUG:root:Executing:Action: cheese
+DEBUG:root:Order:1 17 2.0
+DEBUG:root:Result: Action: cheese -> Failure
 DEBUG:root:Result: Sequence: Cheese Plan -> Failure
 DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
 DEBUG:root:Executing:Check: check_enemy_forces
@@ -1474,7 +1264,10 @@ DEBUG:root:Finish turn
 DEBUG:root:Executing:Selector: High Level Ordering of Strategies
 DEBUG:root:Executing:Sequence: Cheese Plan
 DEBUG:root:Executing:Check: check_cheese
-DEBUG:root:Result: Check: check_cheese -> Failure
+DEBUG:root:Result: Check: check_cheese -> Success
+DEBUG:root:Executing:Action: cheese
+DEBUG:root:Order:1 17 2.0
+DEBUG:root:Result: Action: cheese -> Failure
 DEBUG:root:Result: Sequence: Cheese Plan -> Failure
 DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
 DEBUG:root:Executing:Check: check_enemy_forces
@@ -1492,25 +1285,10 @@ DEBUG:root:Finish turn
 DEBUG:root:Executing:Selector: High Level Ordering of Strategies
 DEBUG:root:Executing:Sequence: Cheese Plan
 DEBUG:root:Executing:Check: check_cheese
-DEBUG:root:Result: Check: check_cheese -> Failure
-DEBUG:root:Result: Sequence: Cheese Plan -> Failure
-DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
-DEBUG:root:Executing:Check: check_enemy_forces
-DEBUG:root:Result: Check: check_enemy_forces -> Failure
-DEBUG:root:Result: Sequence: Enemy Overspreading Strategy -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Action: spread
-DEBUG:root:Result: Action: spread -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
-DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: High Level Ordering of Strategies
-DEBUG:root:Executing:Sequence: Cheese Plan
-DEBUG:root:Executing:Check: check_cheese
-DEBUG:root:Result: Check: check_cheese -> Failure
+DEBUG:root:Result: Check: check_cheese -> Success
+DEBUG:root:Executing:Action: cheese
+DEBUG:root:Order:1 17 2.0
+DEBUG:root:Result: Action: cheese -> Failure
 DEBUG:root:Result: Sequence: Cheese Plan -> Failure
 DEBUG:root:Executing:Sequence: Enemy Overspreading Strategy
 DEBUG:root:Executing:Check: check_enemy_forces

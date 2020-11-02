@@ -62,10 +62,9 @@ def cheese(state):
                     fleets_in_progress = fleets_in_progress + my_fleets.num_ships
 
 
-            future_forces = enemy_planet.num_ships + state.distance(enemy_planet.ID, my_planet.ID)*enemy_planet.growth_rate
+            future_forces = enemy_planet.num_ships + (state.distance(enemy_planet.ID, my_planet.ID))*enemy_planet.growth_rate
             if(future_forces < find_available_ships(state, my_planet) and fleets_in_progress < future_forces):
-                if(find_available_ships(state, my_planet) > enemy_planet.num_ships):
-                    issue_order(state, my_planet.ID, enemy_planet.ID, future_forces+1)
+                issue_order(state, my_planet.ID, enemy_planet.ID, ((future_forces)-(fleets_in_progress))+1)
     #return issue_order(state, sending_planet.ID, enemy_planet.ID, find_available_ships(state, sending_planet))
 
 
