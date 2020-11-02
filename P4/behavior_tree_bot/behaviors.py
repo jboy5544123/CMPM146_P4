@@ -1,4 +1,4 @@
-\import sys
+import sys
 from math import floor
 sys.path.insert(0, '../')
 from planet_wars import issue_order
@@ -106,7 +106,7 @@ def over_spreading(state):
                         if(my_fleet.destination_planet == neut_planet.ID):
                             fleets_in_progress = fleets_in_progress + my_fleet.num_ships
                     if(find_available_ships(state, sending_planet) > (enemy_fleet.num_ships) + 2 - neut_planet.num_ships and fleets_in_progress < enemy_fleet.num_ships + 2 - neut_planet.num_ships):
-                        issue_order(state, sending_planet.ID, neut_planet.ID, enemy_fleet.num_ships + 2 - neut_planet.num_ships)
+                        return issue_order(state, sending_planet.ID, neut_planet.ID, enemy_fleet.num_ships + 2 - neut_planet.num_ships)
 
     return False
 
@@ -138,7 +138,7 @@ def spread(state):
                 planet_to_take = planet
 
             if(find_available_ships(state, my_planets) > 0 and planet_to_take is not None):
-                issue_order(state, my_planets.ID, planet_to_take.ID, find_available_ships(state, my_planets))
+                return issue_order(state, my_planets.ID, planet_to_take.ID, find_available_ships(state, my_planets))
 
     
 def find_my_strongest_planet(state):
@@ -158,10 +158,10 @@ def find_enemy_strongest_planet(state):
 
     return enemy_strongest_planet
 
-
+'''
 def find_my_weakest_planet(state):
     my_weakest_planet = state.my_planets()[0]
-        for neut_planet in state.neutral_planets():
+    for neut_planet in state.neutral_planets():
             for enemy_fleet in state.enemy_fleets():
 
     for planet in state.my_planets():
@@ -169,7 +169,7 @@ def find_my_weakest_planet(state):
             my_weakest_planet = planet
 
     return my_weakest_planet
-
+'''
 
 def find_enemy_weakest_planet(state):
     enemy_weakest_planet = state.enemy_planets()[0]
