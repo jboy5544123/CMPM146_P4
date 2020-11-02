@@ -4,7 +4,7 @@ sys.path.insert(0, '../')
 from planet_wars import issue_order
 
 
-def attack_weakest_enemy_planet(state): 
+def attack_weakest_enemy_planet(state):
     # (1) If we currently have a fleet in flight, abort plan.
     if len(state.my_fleets()) >= 1:
         return False
@@ -49,14 +49,14 @@ def cheese(state):
 
     #sending_planet = find_my_strongest_planet(state)
     #enemy_planet = find_enemy_weakest_planet(state)
-    
+
     sending_planet = max(state.my_planets(), key=lambda t: t.num_ships, default=None)
     enemy_planet = min(state.enemy_planets(), key=lambda t: t.num_ships, default=None)
-    
+
     check = find_available_ships(state, sending_planet)
-    
+
     #return issue_order(state, sending_planet.ID, enemy_planet.ID, find_available_ships(state, sending_planet))
-    
+
     if(check > 0):
         return issue_order(state, sending_planet.ID, enemy_planet.ID, check)
     else:
@@ -187,7 +187,7 @@ def find_minimum_fleet_size(planet, state):
     return min_fleet
 
 def find_available_ships(state, planet):
-    
+
     available_ships = 0
     available_ships = (planet.num_ships) - find_minimum_fleet_size(planet, state)
 
@@ -208,4 +208,3 @@ def find_available_ships(state, planet):
     #if we are losing abandon the planet unless its our last planet
 
     #
-
